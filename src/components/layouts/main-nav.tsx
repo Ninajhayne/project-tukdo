@@ -39,6 +39,9 @@ export function MainNav({ items }: MainNavProps) {
             </Link>
             <NavigationMenu>
                 <NavigationMenuList>
+
+{/*
+
                 {items?.[0]?.items ? (
                     <NavigationMenuItem>
                         <NavigationMenuTrigger className="h-auto">
@@ -113,22 +116,25 @@ export function MainNav({ items }: MainNavProps) {
                         )
                     )
                     )}
+
+*/}
+
                     <NavigationMenuItem>
-                        <Link href="/docs" legacyBehavior passHref>
+                        <Link href="/courses" legacyBehavior passHref>
                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                 Courses
                             </NavigationMenuLink>
                         </Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <Link href="/docs" legacyBehavior passHref>
+                        <Link href="/listing" legacyBehavior passHref>
                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                 Find Tutor
                             </NavigationMenuLink>
                         </Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <Link href="/docs" legacyBehavior passHref>
+                        <Link href="/about-page" legacyBehavior passHref>
                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                 About
                             </NavigationMenuLink>
