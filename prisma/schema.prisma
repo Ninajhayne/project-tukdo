@@ -1,0 +1,399 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch", "fullTextIndex"]
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Profile {
+  id String @id @default(uuid()) @map("_id")
+  userId String @unique
+  name String
+  imageUrl String
+  email String
+
+  plazas Plaza[]
+  members Member[]
+  channels Channel[]
+
+  listing Listing?
+  reservations Reservation[]
+
+  courseRatings CourseRating[]
+  listingRatings ListingRating[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Course {
+  id String @id @default(uuid()) @map("_id")
+  userId String
+  title String
+  description String?
+  imageUrl String?
+  price Float? @default(500)
+  isPublished Boolean @default(false)
+
+  categoryId String?
+  category Category? @relation(fields: [categoryId], references: [id])
+
+  chapters Chapter[]
+  attachments Attachment[]
+  purchases Purchase[]
+  ratings CourseRating[]
+
+  numOfRatings Float @default(0)
+  averageRating Float @default(0)
+  rating Float @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([categoryId])
+  @@fulltext([title])
+}
+
+model Category {
+  id String @id @default(uuid()) @map("_id")
+  name String @unique
+  courses Course[]
+}
+
+model CourseRating {
+  id String @id @default(uuid()) @map("_id")
+  //userId String @unique
+
+  courseId String
+  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  userId String
+  user Profile @relation(fields: [userId], references: [userId], onDelete: Cascade)
+
+  rating Float?
+
+  description String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@unique([userId, courseId])
+}
+
+model Attachment {
+  id String @id @default(uuid()) @map("_id")
+  name String
+  url String
+
+  courseId String
+  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([courseId])
+}
+
+model Chapter {
+  id String @id @default(uuid()) @map("_id")
+  title String
+  description String?
+  videoUrl String?
+  position Int
+  isPublished Boolean @default(false)
+  isFree Boolean @default(false)
+
+  courseId String
+  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  userProgress UserProgress[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([courseId])
+}
+
+model UserProgress {
+  id String @id @default(uuid()) @map("_id")
+  userId String
+
+  chapterId String
+  chapter Chapter @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+
+  isCompleted Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([chapterId])
+  @@unique([userId, chapterId])
+}
+
+model Purchase {
+  id String @id @default(uuid()) @map("_id")
+  userId String
+
+  courseId String
+  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updateAt DateTime @updatedAt()
+
+
+  @@unique([userId, courseId])
+  @@index([courseId])
+}
+
+model StripeCustomer {
+  id String @id @default(uuid()) @map("_id")
+  userId String @unique
+
+  stripeCustomerId String @unique
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Listing  {
+  id String @id @default(uuid()) @map("_id")
+  description String
+  
+  location Json?
+  videoUrl String?
+  mode String?
+  fee Float?
+  startTime String?
+  endTime String?
+
+  serverId String?
+
+  listingCategoryId String?
+  listingCategory ListingCategory? @relation(fields: [listingCategoryId], references: [id])
+
+  isListed Boolean @default(false)
+
+  mentorId String @unique
+  mentor Profile @relation(fields: [mentorId], references: [userId], onDelete: Cascade)
+
+  reservations Reservation[]
+  cv CV[]
+  ratings ListingRating[]
+  plaza Plaza[]
+
+  numOfRatings Float @default(0)
+  averageRating Float @default(0)
+  rating Float @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ListingRating {
+  id String @id @default(uuid()) @map("_id")
+  //userId String @unique
+
+  listingId String
+  course Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+
+  userId String
+  user Profile @relation(fields: [userId], references: [userId], onDelete: Cascade)
+
+  rating Float?
+
+  description String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@unique([userId, listingId])
+}
+
+model ListingCategory {
+  id String @id @default(uuid()) @map("_id")
+  name String @unique
+  listings Listing[]
+}
+
+model CV {
+  id String @id @default(uuid()) @map("_id")
+  name String
+  url String
+
+  listingId String
+  listing Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([listingId])
+}
+
+model Reservation {
+  id String @id @default(uuid()) @map("_id")
+
+  userId String @unique
+  user Profile @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  listingId String
+  listing Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+
+  startDate DateTime
+  endDate   DateTime
+  totalPrice Float
+  approved  Boolean  @default(false)
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([listingId])
+}
+
+
+model Plaza {
+  id String @id @default(uuid()) @map("_id")
+  name String
+  imageUrl String 
+  inviteCode String @unique
+
+  profileId String
+  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+
+  listingId String 
+  listing Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+
+  members Member[]
+  channels Channel[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([profileId])
+}
+
+enum MemberRole {
+  ADMIN
+  MODERATOR
+  GUEST
+}
+
+model Member {
+  id String @id @default(uuid()) @map("_id")
+  role MemberRole @default(GUEST)
+
+  profileId String
+  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+
+  plazaId String
+  plaza Plaza @relation(fields: [plazaId], references: [id], onDelete: Cascade)
+
+  messages Message[]
+  directMessages DirectMessage[]
+
+  conversationsInitiated Conversation[] @relation("MemberOne")
+  conversationsReceived Conversation[] @relation("MemberTwo")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([profileId])
+  @@index([plazaId])
+}
+
+enum ChannelType {
+  TEXT
+  AUDIO
+  VIDEO
+}
+
+model Channel {
+  id String @id @default(uuid()) @map("_id")
+  name String
+  type ChannelType @default(TEXT)
+
+  profileId String
+  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+
+  plazaId String
+  plaza Plaza @relation(fields: [plazaId], references: [id], onDelete: Cascade)
+
+  messages Message[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([profileId])
+  @@index([plazaId])
+}
+
+model Message {
+  id String @id @default(uuid()) @map("_id")
+  content String 
+
+  fileUrl String? 
+
+  memberId String
+  member Member @relation(fields: [memberId], references: [id], onDelete: Cascade)
+
+  channelId String
+  channel Channel @relation(fields: [channelId], references: [id], onDelete: Cascade)
+
+  deleted Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([channelId])
+  @@index([memberId])
+
+}
+
+model Conversation {
+  id String @id @default(uuid()) @map("_id")
+
+  memberOneId String
+  memberOne Member @relation("MemberOne", fields: [memberOneId], references: [id], onDelete: Cascade)
+
+  memberTwoId String
+  memberTwo Member @relation("MemberTwo", fields: [memberTwoId], references: [id], onDelete: Cascade)
+
+  directMessages DirectMessage[]
+
+  @@index([memberTwoId])
+
+  @@unique([memberOneId, memberTwoId])
+}
+
+model DirectMessage {
+  id String @id @default(uuid()) @map("_id")
+
+  content String
+  fileUrl String?
+
+  memberId String
+  member Member @relation(fields: [memberId], references: [id], onDelete: Cascade)
+
+  conversationId String
+  conversation Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+
+  deleted Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([memberId])
+  @@index([conversationId])
+  
+}
+
+
+
+
