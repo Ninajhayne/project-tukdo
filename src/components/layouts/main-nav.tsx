@@ -16,7 +16,7 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { Icons } from "@/components/icons"
-
+import Image from "next/image"
 interface MainNavProps {
     items?: MainNavItem[]
 }
@@ -25,14 +25,17 @@ export function MainNav({ items }: MainNavProps) {
     return (
         <div className="hidden gap-6 lg:flex">
             <Link
+                aria-label="Home"
                 href="/"
-                className="hidden items-center space-x-2 lg:flex"
+                className="hidden items-center space-x-2 md:flex"
             >
-                <Icons.logo className="h-6 w-6" aria-hidden="true" />
-                <span className="hidden font-bold lg:inline-block">
-                    {siteConfig.name}
-                </span>
-                <span className="sr-only">Home</span>
+                <Image 
+                    className="mask w-28 py-2" 
+                    src="/logo.png" 
+                    alt="TUKDO Logo"
+                    width={1400}
+                    height={400}
+                /> 
             </Link>
             <NavigationMenu>
                 <NavigationMenuList>
@@ -111,12 +114,26 @@ export function MainNav({ items }: MainNavProps) {
                     )
                     )}
                     <NavigationMenuItem>
-          <Link href="/docs" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Documentation
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
+                        <Link href="/docs" legacyBehavior passHref>
+                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                Courses
+                            </NavigationMenuLink>
+                        </Link>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                        <Link href="/docs" legacyBehavior passHref>
+                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                Find Tutor
+                            </NavigationMenuLink>
+                        </Link>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                        <Link href="/docs" legacyBehavior passHref>
+                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                About
+                            </NavigationMenuLink>
+                        </Link>
+                    </NavigationMenuItem>
                 </NavigationMenuList>
                 
             </NavigationMenu>
