@@ -43,6 +43,7 @@ export const siteConfig = {
   links,
   
   footerNav: [
+    /*
     {
       title: "Tech Stack",
       items: [
@@ -73,6 +74,7 @@ export const siteConfig = {
         },
       ],
     },
+    */
     {
       title: "Links",
       items: [
@@ -123,6 +125,7 @@ export const siteConfig = {
         },
       ],
     },
+    /*
     {
       title: "Team",
       items: [
@@ -148,6 +151,7 @@ export const siteConfig = {
         },
       ],
     },
+    */
   ] satisfies FooterItem[],
   
 }
