@@ -3,6 +3,14 @@ import { SocketProvider } from "@/components/providers/socket-provider";
 import { cn } from "@/lib/utils";
 
 import { Open_Sans } from 'next/font/google'
+import { type Metadata } from "next"
+
+export const metadata: Metadata = {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
+    title: "Messages | TUKDO",
+    description: "Manage your classroom",
+}
+
 const font = Open_Sans({ subsets: ['latin'] });
 
 

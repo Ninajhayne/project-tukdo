@@ -12,8 +12,8 @@ import ListingFilters from "./_components/listing-filters";
 
 export const metadata: Metadata = {
     metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
-    title: "Tukdo Mentors",
-    description: "Find mentors",
+    title: "Find Tutors | TUKDO",
+    description: "Find tutors",
 }
 
 

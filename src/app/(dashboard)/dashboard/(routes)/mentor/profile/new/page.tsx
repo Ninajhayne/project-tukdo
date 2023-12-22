@@ -21,7 +21,7 @@ import MentorOnboardingForm from "../_components/mentor-onboarding-form"
 
 export const metadata: Metadata = {
     metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
-    title: "Mentor Onboarding",
+    title: "Tutor Onboarding | TUKDO",
     description: "Share your expertise",
 }
 

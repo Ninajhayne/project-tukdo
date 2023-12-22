@@ -10,7 +10,7 @@ import { Shell } from "@/components/shells/shell"
 
 export const metadata: Metadata = {
 	metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
-	title: "Collections",
+	title: "Collections | TUKDO",
 	description: "Manage your collections",
 }
 

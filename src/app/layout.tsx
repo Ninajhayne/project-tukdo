@@ -33,11 +33,8 @@ import { TailwindIndicator } from '@/components/tailwind-indicator';
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
-  title: {
-    default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
-  },
-  description: siteConfig.description,
+  title: 'TUKDO',
+  description: 'An E-Learning Community Platform',
   keywords: [
     "Online Learning",
     "Teaching Platform",

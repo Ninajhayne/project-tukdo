@@ -12,7 +12,7 @@ import { Shell } from "@/components/shells/shell"
 
 export const metadata: Metadata = {
     metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
-    title: "Reset Password",
+    title: "Reset Password | TUKDO",
     description: "Enter your email to reset your password",
 }
 

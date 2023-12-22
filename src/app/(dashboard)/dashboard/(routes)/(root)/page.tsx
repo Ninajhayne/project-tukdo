@@ -17,6 +17,12 @@ import { GreetingsCardSpotlight } from "./_components/greetings-card";
 import { Progress } from "@/components/ui/progress";
 import { DashboardCoursesList } from "./_components/dashboard-courses-list";
 
+export const metadata: Metadata = {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
+    title: "Dashboard | TUKDO",
+    description: "Monitor your course progress",
+}
+
 export default async function Dashboard() {
 	const { userId } = auth();
 

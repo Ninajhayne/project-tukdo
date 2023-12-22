@@ -20,7 +20,7 @@ interface CoursesPageProps {
 
 export const metadata: Metadata = {
     metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
-    title: "Courses",
+    title: "Courses | TUKDO",
     description: "All the courses we have to offer",
 }
 

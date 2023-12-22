@@ -49,7 +49,7 @@ const MentorLocationForm = dynamic(() => import("./_components/mentor-location-f
 
 export const metadata: Metadata = {
     metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
-    title: "Mentor Profile",
+    title: "Tutor Profile  | TUKDO",
     description: "Manage your mentor profile",
 }
 

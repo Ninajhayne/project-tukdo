@@ -19,7 +19,7 @@ import { Shell } from "@/components/shells/shell"
 
 export const metadata: Metadata = {
     metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
-    title: "Sign In",
+    title: "Sign In | TUKDO",
     description: "Sign in to your account",
 }
 
@@ -30,8 +30,11 @@ export default async function SignInPage() {
     return (
         <Shell className="max-w-lg">
             <Card>
-                <CardHeader className="space-y-1">
-                    <CardTitle className="text-2xl">Sign in</CardTitle>
+                <CardHeader className="space-y-1 items-center text-center">
+                    <CardTitle className="text-2xl">
+                        <span className="text-[#F2602D]">Sign</span> <span className="text-[#00528A]"> In</span>
+
+                    </CardTitle>
                     <CardDescription>
                         Choose your preferred sign in method
                     </CardDescription>

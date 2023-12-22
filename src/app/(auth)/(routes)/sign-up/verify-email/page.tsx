@@ -12,7 +12,7 @@ import { Shell } from "@/components/shells/shell"
 
 export const metadata: Metadata = {
     metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
-    title: "Verify Email",
+    title: "Verify Email | TUKDO",
     description: "Verify your email address to continue with your sign up",
 }
 

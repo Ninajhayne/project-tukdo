@@ -16,7 +16,7 @@ import ProfileEditor from "@/components/account/profile-editor"
 
 export const metadata: Metadata = {
     metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
-    title: "Account",
+    title: "Account | TUKDO",
     description: "Manage your account settings",
 }
 
