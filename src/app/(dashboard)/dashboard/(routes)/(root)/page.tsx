@@ -16,6 +16,7 @@ import { Clock, Gem } from "lucide-react";
 import { GreetingsCardSpotlight } from "./_components/greetings-card";
 import { Progress } from "@/components/ui/progress";
 import { DashboardCoursesList } from "./_components/dashboard-courses-list";
+import { type Metadata } from "next"
 
 export const metadata: Metadata = {
     metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
