@@ -21,6 +21,9 @@ import { FeaturedMentorSkeleton } from "@/components/skeletons/featured-mentor/f
 import { FeaturedCourseCard } from "@/components/cards/featured-courses/featured-course-card";
 import { FeaturedCourseCardSkeleton } from "@/components/skeletons/featured-courses/featured-course-card-skeleton";
 
+import { TukdoUsersCard } from "@/components/cards/tutor-learner-card"
+import { tukdoUsers } from "@/config/tutor-learner"
+
 
 import { SiAtari } from "react-icons/si";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
@@ -135,7 +138,7 @@ export default async function IndexPage() {
 				className="space-y-6 py-8 md:pt-10 lg:pt-24"
 			>
 				<div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-					<h2 className="text-3xl font-bold leading-[1.1] sm:text-3xl md:text-5xl">
+					<h2 className="text-3xl font-bold leading-[1.1] sm:text-3xl md:text-5xl text-[#F2602D]">
 						Categories
 					</h2>
 					<Balancer className="max-w-[46rem] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
@@ -148,14 +151,26 @@ export default async function IndexPage() {
 					))}
 				</div>
 			</section>
-			
+			<section
+				id="create-a-store-banner"
+				aria-labelledby="create-a-store-banner-heading"
+				className="space-y-6 py-8 xs:mx-0 sm:mx-14 md:mx-20 lg:mx-28 xl:mx-32 "
+
+			>
+			<div className="grid grid-cols-1 gap-6 xs:lg-gap-6 sm:lg-gap-12 md:lg-gap-24 xl:gap-32 sm:grid-cols-1 md:grid-cols-2">
+				{tukdoUsers.map((users) => (
+				<TukdoUsersCard key={users.title} users={users} />
+				))}
+			</div>
+			</section>
+			{/*
 			<section
 				id="become-a-mentor-banner"
 				aria-labelledby="become-a-mentor-banner-heading"
 				className="grid place-items-center gap-6 rounded-lg border bg-card px-6 py-16 text-center text-card-foreground shadow-sm"
 			>
 				<h2 className="text-2xl font-medium sm:text-3xl">
-					Do you want to teach on our website?
+					Do you want to teach on our websivvvte?
 				</h2>
 				<Link href="/become-a-mentor">
 					<div className={cn(buttonVariants())}>
@@ -164,7 +179,7 @@ export default async function IndexPage() {
 					</div>
 				</Link>	
 			</section>
-			{/*
+			
 				<SponsorsSection/>
 			*/}
 			<section
@@ -175,7 +190,7 @@ export default async function IndexPage() {
 				<div className="flex items-center justify-between gap-4">
 					<div className="max-w-[58rem] flex-1 space-y-1">
 						<h2 className="font-heading text-3xl font-bold leading-[1.1] md:text-4xl">
-							Featured courses
+							<span className="text-[#F2602D]">Featured </span> <span className="text-[#00528A]">Courses</span>
 						</h2>
 						<Balancer className="max-w-[46rem] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
 							Explore the best courses
@@ -233,7 +248,7 @@ export default async function IndexPage() {
 				<div className="flex items-center justify-between gap-4">
 					<div className="max-w-[58rem] flex-1 space-y-1">
 						<h2 className="font-heading text-3xl font-bold leading-[1.1] md:text-4xl">
-							Featured Mentors
+							<span className="text-[#F2602D]">Featured </span> <span className="text-[#00528A]"> Tutors</span>
 						</h2>
 						<Balancer className="max-w-[46rem] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
 							Explore mentors from around the world
