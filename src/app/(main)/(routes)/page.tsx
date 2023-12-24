@@ -14,6 +14,8 @@ import { courseCategories } from "@/config/courses"
 import { Badge } from "@/components/ui/badge"
 import { Shell } from "@/components/shells/shell"
 import { buttonVariants } from "@/components/ui/button"
+import Image from "next/image"
+
 import { CourseCategoryCard } from "@/components/cards/course-category-card"
 import { FeaturedMentorCard } from "@/components/cards/featured-metors/featured-mentor-card";
 import { FeaturedMentorSkeleton } from "@/components/skeletons/featured-mentor/featured-mentor-card-skeleton";
@@ -23,7 +25,6 @@ import { FeaturedCourseCardSkeleton } from "@/components/skeletons/featured-cour
 
 import { TukdoUsersCard } from "@/components/cards/tutor-learner-card"
 import { tukdoUsers } from "@/config/tutor-learner"
-
 
 import { SiAtari } from "react-icons/si";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
@@ -88,48 +89,61 @@ export default async function IndexPage() {
 			<section
 				id="hero"
 				aria-labelledby="hero-heading"
-				className="mx-auto flex w-full max-w-[64rem] flex-col items-center justify-center gap-4 pb-8 pt-6 text-center md:pb-12 md:pt-10 lg:py-28"
-			>
-				
-				<Link href="https://www.loglib.io/s/tukdo" target="_blank" rel="noreferrer">
-					<Badge
-						aria-hidden="true"
-						className="rounded-md px-3.5 py-1.5"
-						variant="secondary"
-					>
-						<SiAtari className="mr-2 h-3.5 w-3.5" />
-						Web Vitals
-					</Badge>
-					<span className="sr-only">Meet the teams</span>
-				</Link>
-				<h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:text-6xl lg:leading-[1.1]">
-					An E-Learning Community Platform
-				</h1>
-				<Balancer className="max-w-[46rem] text-lg text-muted-foreground sm:text-xl">
-					Designed to meet your diverse educational needs.
-				</Balancer>
-				<div className="flex flex-wrap items-center justify-center gap-4">
-					<Link
-						href="/courses"
-						className={cn(
-						buttonVariants({
-							size: "lg",
-						})
-						)}
-					>
-						Browse Courses
-					</Link>
-					<Link
-						href="/listings"
-						className={cn(
-						buttonVariants({
-							variant: "outline",
-							size: "lg",
-						})
-						)}
-					>
-						Find Mentors
-					</Link>
+				className="w-full h-[105vh] xs:h-[105vh] md:h-[70vh] bg-[#00528A] lg:h-[80vh] px-6 xs:px-6 lg:px-9 xl:px-9 flex flex-col gap-4 py-6 text-center"
+				>
+				<div className="grid grid-cols-1 gap-2 xs:gap-6 xl:gap-9 lg:gap-9 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
+        
+					<div className="pl-0 xs:pl-0 md:pl-0 lg:pl-14 xl:pl-16 my-auto">
+						<Link href="https://www.loglib.io/s/tukdo" target="_blank" rel="noreferrer">
+							<Badge
+								aria-hidden="true"
+								className="rounded-md px-3.5 py-1.5"
+								variant="secondary"
+							>
+								<SiAtari className="mr-2 h-3.5 w-3.5" />
+								Web Vitals
+							</Badge>
+							<span className="sr-only">Meet the teams</span>
+						</Link>
+						<h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:text-5xl lg:leading-[1.1] mb-4">
+							<span className="text-[#FFFFFF]">
+								An E-Learning <span className="text-[#F2602D] inline-block mt-1"> Community Platform</span>
+							</span>				
+						</h1>
+						<Balancer className="max-w-[46rem] text-lg text-[#ffffff] sm:text-xl mb-6">
+							Designed to meet your diverse educational needs.
+						</Balancer>
+						<div className="flex flex-wrap items-center justify-center gap-4">
+							<Link
+								href="/courses"
+								className={cn(
+								buttonVariants({
+									size: "lg",
+								})
+								)}
+							>
+								Browse Courses
+							</Link>
+							<Link
+								href="/listings"
+								className={cn(
+								buttonVariants({
+									variant: "outline",
+									size: "lg",
+								})
+								)}
+							>
+								Find Tutors
+							</Link>
+						</div>
+					</div>
+					<Image
+						src="/hero2.png"
+						alt=""
+						width={600}
+						height={420}
+						className="rounded-md my-auto"
+					/>
 				</div>
 			</section>
 			<section
