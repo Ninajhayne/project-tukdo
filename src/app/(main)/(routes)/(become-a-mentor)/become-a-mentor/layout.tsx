@@ -11,7 +11,7 @@ interface LobbyLayoutProps {
 
 export const metadata: Metadata = {
     metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
-    title: "Become a mentor | TUKDO",
+    title: "Become a tutor | TUKDO",
     description: "Be part of a community where people help people grow.",
 }
 

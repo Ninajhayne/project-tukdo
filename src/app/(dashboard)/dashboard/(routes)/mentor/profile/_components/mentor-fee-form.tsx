@@ -99,8 +99,8 @@ export const MentorFeeForm = ({
     return (
         <Card
             //as="section"
-            id="mentor-fee-form-container"
-            aria-labelledby="mentor-fee-form-heading"
+            id="tutor-fee-form-container"
+            aria-labelledby="tutor-fee-form-heading"
         >
             <CardContent>
                 <div className="font-medium flex items-center justify-between mt-4">

@@ -41,7 +41,7 @@ export function MentorCard({
 
                     <p className="px-5 text-xs sm:text-base text-slate-500 flex items-center gap-x-1">
                         <PiMedalFill className="h-4 w-4"/>
-                        <span className="text-sm">Mentor</span>
+                        <span className="text-sm">Tutor</span>
                     </p>
 
                     <div className="flex h-12 sm:text-sm gap-x-2 pt-2">

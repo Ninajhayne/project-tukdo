@@ -141,7 +141,7 @@ export const ListingRatingModal = ({
             </DialogTrigger>
             <DialogContent className="sm:max-w-md">
                 <DialogHeader>
-                    <DialogTitle>Mentor rating</DialogTitle>
+                    <DialogTitle>Tutor rating</DialogTitle>
                     <DialogDescription>
                         Share your thoughts
                     </DialogDescription>

@@ -42,7 +42,7 @@ export const ListingCard = ({
                 
                 <div className="flex items-center gap-4">
                     <Image
-                        alt="Mentor"
+                        alt="Tutor"
                         src={imageUrl}
                         width={50}
                         height={50}

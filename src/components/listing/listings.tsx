@@ -49,7 +49,7 @@ export const Listings = ({
             </div>
             {items.length === 0 && (
                 <div className="text-center text-sm text-muted-foreground mt-10">
-                    No mentors found
+                    No tutors found
                 </div>
             )}
             <div className="fixed flex justify-center items-center bottom-16 left-0 right-0">

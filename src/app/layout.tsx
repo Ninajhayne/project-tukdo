@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     "Marketplace",
     "Online Courses",
     "Courses",
-    "Mentors",
+    "Tutors",
     "Free Courses",
     "Teach Online",
     "Knowledge",

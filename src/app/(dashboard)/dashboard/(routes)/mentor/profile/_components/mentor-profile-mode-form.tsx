@@ -83,8 +83,8 @@ export const MentorProfileModeForm = ({
     return (
         <Card
             //as="section"
-            id="mentor-profile-mode-form-container"
-            aria-labelledby="mentor-profile-mode-form-heading"
+            id="tutor-profile-mode-form-container"
+            aria-labelledby="tutor-profile-mode-form-heading"
         >
             <CardContent>
                 <div className="font-medium flex items-center justify-between mt-4">

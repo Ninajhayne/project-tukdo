@@ -119,7 +119,7 @@ const ListingIdPage = async ({
                 <Breadcrumbs
                     segments={[
                     {
-                        title: "Mentors",
+                        title: "Tutors",
                         href: "/listings",
                     },
                     
@@ -139,7 +139,7 @@ const ListingIdPage = async ({
                     <div className="flex flex-col mb-4 md:flex-row space-y-4 md:space-y-0 md:space-x-4">
                         <div className="flex items-center">
                             <Image
-                                alt="Mentor"
+                                alt="Tutor"
                                 src={mentorListing.mentor.imageUrl}
                                 width={50}
                                 height={50}
@@ -231,7 +231,7 @@ const ListingIdPage = async ({
                 
                 <div /*className="sticky top-20"*/>                        
                     <ReservationDateRange
-                        listing={mentorListing}
+                        listing={Listing}
                         //@ts-ignore
                         reservations={reservations}
                         myReservation={myReservation}

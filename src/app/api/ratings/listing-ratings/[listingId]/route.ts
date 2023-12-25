@@ -26,7 +26,7 @@ export async function POST(
         });
 
         if (existingRating) {
-            return new NextResponse("You've already rated this mentor.", { status: 400 });
+            return new NextResponse("You've already rated this tutor.", { status: 400 });
         }
         
         // Retrieve the current averageRating value

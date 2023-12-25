@@ -94,8 +94,8 @@ export const MentorProfileCategoryForm = ({
     return (
         <Card
             //as="section"
-            id="mentor-profile-category-form-container"
-            aria-labelledby="mentor-profile-category-form-heading"
+            id="tutor-profile-category-form-container"
+            aria-labelledby="tutor-profile-category-form-heading"
         >
             <CardContent>
                 <div className="font-medium flex items-center justify-between mt-4">

@@ -58,8 +58,8 @@ export const MentorVideoForm = ({
     return (
         <Card
             //as="section"
-            id="mentor-video-form-container"
-            aria-labelledby="mentor-video-form-heading"
+            id="tutor-video-form-container"
+            aria-labelledby="tutor-video-form-heading"
         >
             <CardContent>
                 <div className="font-medium flex items-center justify-between my-2">

@@ -60,13 +60,13 @@ export default async function NewStorePage() {
     return (
         <Shell variant="sidebar" className="container">
             <PageHeader
-                id="new-mentor-profile-page-header"
-                aria-labelledby="new-mentor-profile-page-header-heading"
+                id="new-tutor-profile-page-header"
+                aria-labelledby="new-tutor-profile-page-header-heading"
                 className="px-2"
             >
-                <PageHeaderHeading size="sm">Mentor Onboarding</PageHeaderHeading>
+                <PageHeaderHeading size="sm">Tutor Onboarding</PageHeaderHeading>
                 <PageHeaderDescription size="sm">
-                    Mentoring is a two-way street. Let us take care of the boring parts so you can concentrate on personal and professional growth for both you and your mentees.
+                    Tutoring is a two-way street. Let us take care of the boring parts so you can concentrate on personal and professional growth for both you and your mentees.
                 </PageHeaderDescription>
             </PageHeader>
             <Card

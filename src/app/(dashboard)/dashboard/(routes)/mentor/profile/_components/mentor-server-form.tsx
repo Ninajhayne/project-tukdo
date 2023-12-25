@@ -102,8 +102,8 @@ export const MentorServerForm = ({
     return (
             <Card
                 //as="section"
-                id="mentor-server-form-container"
-                aria-labelledby="mentor-server-form-heading"
+                id="tutor-server-form-container"
+                aria-labelledby="tutor-server-form-heading"
             >
                 <CardHeader>
                     <CardTitle>Customize your server</CardTitle>

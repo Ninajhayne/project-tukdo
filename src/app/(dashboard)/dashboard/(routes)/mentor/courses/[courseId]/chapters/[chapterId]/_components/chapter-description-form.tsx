@@ -74,8 +74,8 @@ export const ChapterDescriptionForm = ({
     return (
         <Card
             //as="section"
-            id="mentor-bio-form-container"
-            aria-labelledby="mentor-bio-form-heading"
+            id="tutor-bio-form-container"
+            aria-labelledby="tutor-bio-form-heading"
             className="mt-2"
         >
             <CardContent className="mt-2">

@@ -26,9 +26,9 @@ export const siteConfig = {
           items: [],
         },
         {
-          title: "Find Mentors",
+          title: "Find Tutors",
           href: "/listings",
-          description: "Find mentors near you",
+          description: "Find tutors near you",
           items: [],
         },
         {

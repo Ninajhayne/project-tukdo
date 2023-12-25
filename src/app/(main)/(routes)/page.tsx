@@ -179,8 +179,8 @@ export default async function IndexPage() {
 			</section>
 			{/*
 			<section
-				id="become-a-mentor-banner"
-				aria-labelledby="become-a-mentor-banner-heading"
+				id="become-a-tutor-banner"
+				aria-labelledby="become-a-tutor-banner-heading"
 				className="grid place-items-center gap-6 rounded-lg border bg-card px-6 py-16 text-center text-card-foreground shadow-sm"
 			>
 				<h2 className="text-2xl font-medium sm:text-3xl">
@@ -255,8 +255,8 @@ export default async function IndexPage() {
 				</div>
 			</section>
 			<section
-				id="featured-mentors"
-				aria-labelledby="featured-mentors-heading"
+				id="featured-tutors"
+				aria-labelledby="featured-tutors-heading"
 				className="space-y-6 pt-8 md:pt-10 lg:pt-12"
 			>
 				<div className="flex items-center justify-between gap-4">
@@ -265,7 +265,7 @@ export default async function IndexPage() {
 							<span className="text-[#F2602D]">Featured </span> <span className="text-[#00528A]"> Tutors</span>
 						</h2>
 						<Balancer className="max-w-[46rem] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-							Explore mentors from around the world
+							Explore tutors from around the world
 						</Balancer>
 					</div>
 					<Link
@@ -277,9 +277,9 @@ export default async function IndexPage() {
 						})
 						)}
 					>
-						View all mentors
+						View all tutors
 						<ArrowRightIcon className="ml-2 h-4 w-4" aria-hidden="true" />
-						<span className="sr-only">View all mentors</span>
+						<span className="sr-only">View all tutors</span>
 					</Link>
 				</div>
 				<div className="space-y-8">
@@ -307,9 +307,9 @@ export default async function IndexPage() {
 						})
 						)}
 					>
-						View all mentors
+						View all tutors
 						<ArrowRightIcon className="ml-2 h-4 w-4" aria-hidden="true" />
-						<span className="sr-only">View all mentors</span>
+						<span className="sr-only">View all tutors</span>
 					</Link>
 				</div>
 			</section>

@@ -78,7 +78,7 @@ const GradientPage = () => {
                     
                     <div className="flex flex-col justify-center col-span-1 text-center lg:text-start">
                         <h1 className="mb-8 text-7xl font-extrabold leading-tight text-opacity-80">
-                            Become a mentor
+                            Become a tutor
                         </h1>
                         <p className="mb-6 text-base font-normal leading-7 lg:w-3/4">
                             Be part of a community where people help people grow.
@@ -123,7 +123,7 @@ const GradientPage = () => {
                         </div>
                         <br />
                         <div className="my-6">
-                            <Button>Become a Mentor</Button>
+                            <Button>Become a tutor</Button>
                         </div>
                     </div>
                     */}

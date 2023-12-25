@@ -100,14 +100,14 @@ export default async function MentorProfilePage() {
     return (
         <div className="p-6">
             <PageHeader
-                id="dashboard-mentor-profile-page-header"
-                aria-labelledby="dashboard-mentor-profile-page-header-heading"
+                id="dashboard-tutor-profile-page-header"
+                aria-labelledby="dashboard-tutor-profile-page-header-heading"
             >
                 <div>
                     <div className="flex items-center justify-between">
                         <PageHeader
-                            id="mentor-profile-page-header"
-                            aria-labelledby="mentor-profile-page-header-heading"
+                            id="tutor-profile-page-header"
+                            aria-labelledby="tutor-profile-page-header-heading"
                         >
                             <PageHeaderHeading size="sm">Profile Setup</PageHeaderHeading>
                             <PageHeaderDescription size="sm">

@@ -40,7 +40,7 @@ export default async function Plaza() {
 									href="/dashboard/mentor/profile"
 								>
 									<Button>
-										Become a mentor
+										Become a tutor
 									</Button>
 								</Link>
 								
@@ -62,7 +62,7 @@ export default async function Plaza() {
 									href="/listings"
 								>
 									<Button>
-										Find mentors
+										Find tutors
 									</Button>
 								</Link>
 							</div>
