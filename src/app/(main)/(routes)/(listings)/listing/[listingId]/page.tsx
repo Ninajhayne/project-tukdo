@@ -231,7 +231,7 @@ const ListingIdPage = async ({
                 
                 <div /*className="sticky top-20"*/>                        
                     <ReservationDateRange
-                        listing={Listing}
+                        listing={mentorListing}
                         //@ts-ignore
                         reservations={reservations}
                         myReservation={myReservation}
