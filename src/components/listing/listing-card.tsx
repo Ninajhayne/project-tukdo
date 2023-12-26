@@ -56,7 +56,7 @@ export const ListingCard = ({
                         <p className="text-xs truncate">
                             {email}
                         </p>
-                        <Badge className="rounded-none">
+                            <Badge className="rounded-none bg-[#00528a] hover:bg-[#003c8a]">
                             {mode}
                         </Badge>
                         
@@ -72,14 +72,14 @@ export const ListingCard = ({
                         {category}
                     </p>
                     */}
-                    
-                    <p className="ml-0.5">
+
+                    <p className="ml-0.5 text-lg font-bold text-[#F2602D]">
                         {fee === 0 ? "Free" : `${formatPrice(fee)} / day`}
                     </p>
                     {numOfRatings && rating !== 0 ? (
                         <div className="flex flex-row items-center">
                             <p>
-                                ★ {rating.toFixed(2)}
+                                <span className="text-[#FFE600]">★</span> {rating.toFixed(2)}
                             </p>
                             <Dot className="w-4 h-4 mt-1"/>
                             {/*
@@ -88,7 +88,7 @@ export const ListingCard = ({
                                 </Button>
                             */}
                             
-                            <p className="text-sm">
+                            <p className="text-xs text-muted-foreground">
                                 {!numOfRatings ? '' :
                                 numOfRatings === 1 ? `${numOfRatings} review` :
                                 `${numOfRatings} reviews`}
