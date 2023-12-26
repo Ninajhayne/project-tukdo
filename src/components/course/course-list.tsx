@@ -1,6 +1,7 @@
 import { Category, Course } from "@prisma/client";
 
 import { CourseCard } from "@/components/course/course-card";
+import Image from "next/image";
 
 type CourseWithProgressWithCategory = Course & {
     category: Category | null;
@@ -34,8 +35,19 @@ export const CoursesList = ({
                 ))}
             </div>
             {items.length === 0 && (
-                <div className="text-center text-sm text-muted-foreground mt-10 h-screen">
-                    No courses found
+                <div className="mb-8">
+                    <Image
+                        src= "/images/no-found.png"
+                        alt = "sign-in"
+                        width={100}
+                        height={100}
+                        className="mx-auto h-32 object-contain"
+                        loading="lazy"
+                        />
+                    <div className="text-center text-base">
+                        <p className="font-medium text-foreground mb-2">No courses found</p>
+                        <p className="text-muted-foreground">Try different category or keywords</p>
+                    </div>
                 </div>
             )}
         </div>
