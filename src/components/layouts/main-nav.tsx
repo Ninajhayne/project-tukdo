@@ -127,7 +127,7 @@ export function MainNav({ items }: MainNavProps) {
                         </Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <Link href="/listing" legacyBehavior passHref>
+                        <Link href="/listings" legacyBehavior passHref>
                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                 Find Tutor
                             </NavigationMenuLink>
