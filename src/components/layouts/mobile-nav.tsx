@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Icons } from "@/components/icons"
+import Image from "next/image"
 
 interface MobileNavProps {
 	mainNavItems?: MainNavItem[]
@@ -61,8 +62,13 @@ export function MobileNav({ mainNavItems, sidebarNavItems }: MobileNavProps) {
 					className="flex items-center space-x-2"
 					onClick={() => setIsOpen(false)}
 				>
-					<Icons.logo className="mr-2 h-4 w-4" aria-hidden="true" />
-					<span className="font-bold">{siteConfig.name}</span>
+					<Image 
+						className="mask w-24 py-2" 
+						src="/logo.png" 
+						alt="TUKDO Logo"
+						width={1400}
+						height={400}
+					/>   
 					<span className="sr-only">Home</span>
 				</Link>
 				</div>

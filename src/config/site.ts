@@ -17,7 +17,7 @@ export const siteConfig = {
   ogImage: "https://tukdo.vercel.app/opengraph-image.png",
   mainNav: [
     {
-      title: "Lobby",
+      title: "Menu",
       items: [
         {
           title: "Courses",
@@ -32,9 +32,15 @@ export const siteConfig = {
           items: [],
         },
         {
-          title: "Blog",
-          href: "/",
-          description: "Read our latest blog posts.",
+          title: "Become Tutor",
+          href: "/dashboard/mentor/profile",
+          description: "",
+          items: [],
+        },
+        {
+          title: "About",
+          href: "/about-page",
+          description: "",
           items: [],
         },
       ],
