@@ -44,7 +44,7 @@ const CoursesCategories = ({
             className="w-full"
             //className="w-full rounded border bg-background text-muted-foreground"
         >
-            <div className="flex items-center justify-center py-2">
+            <div className="flex items-center justify-between">
                 {items.map((item) => (
                     <CoursesCategoryItem
                         key={item.id}

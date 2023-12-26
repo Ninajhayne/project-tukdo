@@ -45,19 +45,23 @@ export default async function CoursesPage({
             <section
                 id="build-a-board-categories"
                 aria-labelledby="build-a-board-categories-heading"
-                className="sticky top-14 z-30 w-full shrink-0 overflow-hidden bg-background/50 pb-4 pt-2 shadow-md sm:backdrop-blur"
+                className="sticky top-16 z-30 w-full shrink-0 overflow-hidden bg-background/50 pb-4 shadow-md sm:backdrop-blur"
             >
-                <div className="flex flex-row items-center justify-center space-x-2 bg-background px-8">
-                    
-                    <div className="grid place-items-center">
-                        <CoursesCategories
-                            items={courseCategories}
+                {/*<div className="flex flex-row items-center justify-center space-x-2 bg-background px-8">*/}
+                <div className="flex flex-row items-center justify-between bg-background px-6 xs:px-6 lg:px-9 xl:px-9 space-x-9">
+                    <div className="flex-grow">
+                        <div className="grid place-items-center">
+                            <CoursesCategories
+                                items={courseCategories}
+                                searchParams={searchParams}
+                            />
+                        </div>
+                    </div>
+                    <div className="ml-6 xs:ml-6 lg:ml-9 xl:ml-12">
+                        <CourseFilters
                             searchParams={searchParams}
                         />
                     </div>
-                    <CourseFilters
-                        searchParams={searchParams}
-                    />
                 </div>
             </section>
             
