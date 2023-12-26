@@ -195,7 +195,7 @@ const CourseIdPage = async ({
                         userId = {userId}
                     />
                     */}
-                    <div /*className="sticky top-20"*/>                        
+                    <div className="sticky top-20">                        
                         <CourseSidePreview
                             course = {course}
                             purchase = {purchase}
