@@ -42,7 +42,7 @@ export async function CourseCategoryCard({ category }: CategoryCardProps) {
 				</div>
 			</CardHeader>
 			<CardContent className="flex flex-col items-center space-y-1.5">
-				<CardTitle className="capitalize">{category.title}</CardTitle>
+				<CardTitle className="capitalize lg:text-xl sm:text-2xl">{category.title}</CardTitle>
 				<React.Suspense fallback={<Skeleton className="h-4 w-20" />}>
 					<CardDescription>
 						{courseCount} {courseCount === 1 ? "course" : "courses"}
