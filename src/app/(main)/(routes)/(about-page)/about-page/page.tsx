@@ -15,7 +15,7 @@ const AboutPage = () => {
 	return (
 		<Shell as="div" className="gap-6 xs:gap-6 lg:gap-9 pt-0 xs:pt-0 md:pt-0 lg:pt-0">
 			<section
-				id="hero"
+				id="hero" 
 				aria-labelledby="hero-heading"
 				className= "w-full h-[40vh] xs:h-[65vh] md:h-[65vh] lg:h-[85vh] px-9 flex flex-col gap-4 pb-8 text-center lg:"
 				style={{

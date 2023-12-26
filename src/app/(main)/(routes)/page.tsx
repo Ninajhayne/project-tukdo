@@ -85,7 +85,7 @@ export default async function IndexPage() {
 		}
 	)()
 	return (
-		<Shell className="gap-12" /*className="max-w-6xl pt-0 md:pt-0"*/>
+		<Shell className="gap-12 pt-0 xs:pt-0 md:pt-0 lg:pt-0" /*className="max-w-6xl pt-0 md:pt-0"*/>
 			<section
 				id="hero"
 				aria-labelledby="hero-heading"
@@ -152,7 +152,7 @@ export default async function IndexPage() {
 				className="space-y-6 py-8 md:pt-10 lg:pt-24"
 			>
 				<div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-					<h2 className="text-3xl font-bold leading-[1.1] sm:text-3xl md:text-5xl text-[#F2602D]">
+					<h2 className="text-2xl font-bold leading-[1.1] sm:text-3xl text-[#F2602D]">
 						Categories
 					</h2>
 					<Balancer className="max-w-[46rem] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
@@ -203,7 +203,7 @@ export default async function IndexPage() {
 			>
 				<div className="flex items-center justify-between gap-4">
 					<div className="max-w-[58rem] flex-1 space-y-1">
-						<h2 className="font-heading text-3xl font-bold leading-[1.1] md:text-4xl">
+						<h2 className="text-2xl font-bold leading-[1.1] sm:text-3xl">
 							<span className="text-[#F2602D]">Featured </span> <span className="text-[#00528A]">Courses</span>
 						</h2>
 						<Balancer className="max-w-[46rem] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
@@ -261,7 +261,7 @@ export default async function IndexPage() {
 			>
 				<div className="flex items-center justify-between gap-4">
 					<div className="max-w-[58rem] flex-1 space-y-1">
-						<h2 className="font-heading text-3xl font-bold leading-[1.1] md:text-4xl">
+						<h2 className="text-2xl font-bold leading-[1.1] sm:text-3xl">
 							<span className="text-[#F2602D]">Featured </span> <span className="text-[#00528A]"> Tutors</span>
 						</h2>
 						<Balancer className="max-w-[46rem] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
