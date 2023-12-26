@@ -39,12 +39,12 @@ export async function MeetMentorCard({
 }: MeetMentorCardProps) {
 	return (
 		<section>
-			<h1
-                className="font-bold text-lg"
+			<h2
+                className="line-clamp-1 text-xl sm:text-2xl font-bold mb-4"
             >
                 Meet your tutor 
-            </h1>
-            <div className="max-w-2xl dark:bg-[#1E1F22] bg-[#F0EFE9] rounded-lg shadow-sm p-6">
+            </h2>
+            <div className="max-w-2xl dark:bg-[#00538a36] bg-[#00538a12] rounded-lg shadow-sm p-6">
                 <div className="flex flex-col justify-center items-center">
                     <MentorCard
                         mentor={mentor}

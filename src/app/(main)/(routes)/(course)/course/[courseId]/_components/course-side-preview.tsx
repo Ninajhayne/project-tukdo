@@ -38,7 +38,7 @@ export const CourseSidePreview = ({
 }: CourseSidePreviewProps) => {
 
     return (
-        <Card>
+        <Card className="dark:bg-[#00538a36] bg-[#00538a12]">
             <CardHeader>
                 <CourseVideoPreview
                     course={course}

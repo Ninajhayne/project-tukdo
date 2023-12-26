@@ -93,7 +93,7 @@ export default async function CoursesPage({
             <Shell>
                 <CoursesList
                     items={courses}
-                />
+                />  
             </Shell>
         </>
     );

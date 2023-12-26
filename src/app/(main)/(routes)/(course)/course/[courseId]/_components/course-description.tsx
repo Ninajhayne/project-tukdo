@@ -59,12 +59,12 @@ export const CourseDescription = ({
             
             <div className="flex justify-between items-center gap-x-2">
                 <div className="flex-1 order-2">
-                    <div className="text-xs">
+                    <div className="text-sm">
                         Created by
                         {"\u00a0"}
                         <span className="underline">{mentorName}</span>
                     </div>
-                    <div className="flex items-center text-xs">
+                    <div className="flex items-center text-sm">
                         <p>Last Updated: {new Date(course.updatedAt).toLocaleDateString()}</p>
                     </div>
                 </div>

@@ -151,12 +151,12 @@ const CourseIdPage = async ({
                     href: `/course/${course.id}`,
                 },
                 ]}
-                className="pl-4 pt-2"
+                className="pb-0 xs:pb-4 lg:pb-0 pt-6 md:py-8 container"
             />
             <div className="flex flex-col md:flex-row w-full">
-                <div className="w-full md:w-1/2 lg:w-2/3 xl:w-3/4 p-4 order-2 md:order-1">
+                <div className="w-full md:w-1/2 lg:w-2/3 xl:w-3/4 pb-8 pt-6 md:py-8 container order-2 md:order-1">
                     <section>
-                        <h1 className="text-3xl font-extrabold leading-tight sm:text-4xl mb-4 order-2 md:order-1">
+                        <h1 className="text-2xl font-bold leading-tight sm:text-3xl mb-4 order-2 md:order-1">
                             {course.title}
                         </h1>
                         <CourseDescription

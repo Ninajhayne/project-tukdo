@@ -22,10 +22,10 @@ export const CourseChapterList = ({
 
     return (
         <div>
-            <h2 className="line-clamp-1 text-2xl font-bold">Chapters</h2>
+            <h2 className="line-clamp-1 text-xl sm:text-2xl font-bold mb-4">Course Chapters</h2>
             <ScrollArea>
                 {course.chapters && course.chapters.map((chapter, index) => (
-                    <div key={index} className="w-full gap-2 flex">
+                    <div key={index} className="w-full pb-1.5 gap-2 flex">
                         <p>{index + 1}.</p>
                         <p>{chapter.title}</p>
                     </div>
