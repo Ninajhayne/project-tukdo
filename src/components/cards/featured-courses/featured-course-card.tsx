@@ -39,7 +39,7 @@ export const FeaturedCourseCard = ({
                                 alt={course.title}
                                 className="object-cover"
                                 sizes="(min-width: 1024px) 20vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, (min-width: 475px) 50vw, 100vw"
-                                fill
+                                fill 
                                 loading="lazy"
                             />
                         ) : (
@@ -58,13 +58,13 @@ export const FeaturedCourseCard = ({
                     </AspectRatio>
                 </CardHeader>
                 <span className="sr-only">{course.title}</span>
-                <CardContent className="grid gap-2.5 p-4">
+                <CardContent className="grid gap-1.5 p-4">
                     <CardTitle className="line-clamp-1 text-base">{course.title}</CardTitle>
                     <CardDescription className="line-clamp-2 flex flex-col">
-                        <span className="font-medium">
-                            {!course.rating ? "" : `★ ${course.rating.toFixed(2)}`}
+                        <span className="font-medium text-muted-foreground">
+                            {!course.rating ? "" : <span><span className="text-[#FFE600]">★</span> {course.rating.toFixed(1)}</span>}
                         </span>
-                        <span className="text-md md:text-sm font-meduim text-slate-400"> 
+                        <span className="text-lg font-bold text-[#F2602D]"> 
                             {!course.price ? "Free" : `${formatPrice(course.price)}`}
                         </span>
                     </CardDescription>
