@@ -3,6 +3,8 @@ import { LatLng } from "leaflet";
 import { useState } from "react";
 import { useMapEvents, Circle } from "react-leaflet";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils"
+import { buttonVariants } from "@/components/ui/button"
 import { Navigation, Radar } from "lucide-react";
 
 const LocateMeControl = () => {
@@ -53,10 +55,11 @@ const LocateMeControl = () => {
 				className="gap-x-2 flex flex-row text-black"
 				style={{ position: "absolute", top: "20px", right: "10px", zIndex: 1000 }}
 			>
-				<button onClick={() => handleRadiusChange(0)}>clear</button>
-				<button onClick={() => handleRadiusChange(1000)}>1 km</button>
-				<button onClick={() => handleRadiusChange(5000)}>5 km</button>
-				<button onClick={() => handleRadiusChange(10000)}>10 km</button>
+				<Button className={cn(buttonVariants({variant: "outline2"})) + " text-xs px-2 h-9"} onClick={() => handleRadiusChange(1000)}>1 KM</Button>
+				<Button className={cn(buttonVariants({variant: "outline2"})) + " text-xs px-2 h-9"} onClick={() => handleRadiusChange(5000)}>5 KM</Button>
+				<Button className={cn(buttonVariants({variant: "outline2"})) + " text-xs px-2 h-9"} onClick={() => handleRadiusChange(10000)}>10 KM</Button>
+				<Button className={cn(buttonVariants({variant: "default"})) + " text-xs px-2 h-9" } onClick={() => handleRadiusChange(0)}>Clear</Button>
+
 			</div>
 			{showCircle && location && (
 				<>
