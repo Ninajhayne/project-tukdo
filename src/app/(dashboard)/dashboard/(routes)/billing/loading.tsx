@@ -11,11 +11,11 @@ import { Shell } from "@/components/shells/shell"
 export default function BillingLoading() {
 	return (
 		<Shell variant="sidebar" as="div">
-			<PageHeader separated>
-				<PageHeaderHeading size="sm">Billing</PageHeaderHeading>
-				<PageHeaderDescription size="sm">
-				Manage your billing and subscription
-				</PageHeaderDescription>
+			<PageHeader id="account-header" aria-labelledby="account-header-heading" className="rounded-lg shadow-sm flex items-center gap-x-2">
+				<div className="p-6 space-y-2 rounded-lg border">
+					<Skeleton className="h-8 w-full" />
+					<Skeleton className="h-6 w-full" />
+				</div>
 			</PageHeader>
 			<section className="space-y-5">
 				<h2 className="text-xl font-semibold sm:text-2xl">Billing info</h2>
