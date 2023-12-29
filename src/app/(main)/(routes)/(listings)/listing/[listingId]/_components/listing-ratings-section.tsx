@@ -29,25 +29,33 @@ export const ListingRatingsSectionList = async ({
 
     return (
         <div>
-            <div className="flex items-center font-bold text-sm md:text-xl">
-                <p>
-                    ★ {!listing.rating ? "No ratings yet" : listing.rating.toFixed(2)}
-                </p>
+            <h2 className="line-clamp-1 text-xl sm:text-2xl font-bold mb-4">Tutor Reviews</h2>
+                <div className="flex items-center text-center justify-center text-xl space-x-3">
 
-                <p className="px-1">
-                    ·
-                </p>
-                <p>
-                    {!listing.numOfRatings ? 'No reviews' :
-                    listing.numOfRatings === 1 ? `${listing.numOfRatings} review` :
-                    `${listing.numOfRatings} reviews`}
-                </p>
-            </div>
+                    <p className="text-5xl">
+                    {!listing.rating
+                        ? "0"
+                        : listing.rating.toFixed(1)}
+                    </p>
+                    <div className="px-1 text-base font-semibold">
+                        <p>Out of</p>
+                        <p>5 Stars</p>
+                    </div> 
+                    <span className="text-[#FFE600] text-4xl">★★★★★</span> 
+                </div>
+                
+                <div className="items-center text-center text-muted-foreground text-sm mt-3 mb-4">
+                    <p>
+                        {!listing.numOfRatings ? 'No reviews' :
+                        listing.numOfRatings === 1 ? `${listing.numOfRatings} review` :
+                        `${listing.numOfRatings} reviews`}
+                    </p>
+                </div>
 
-            <ListingUserRatings
-                listingRatings={listingRatings}
-            />
-            
+                <ListingUserRatings
+                    listingRatings={listingRatings}
+                />
+                
         </div>
 
     );

@@ -42,7 +42,7 @@ export async function MeetMentorCard({
 			<h2
                 className="line-clamp-1 text-xl sm:text-2xl font-bold mb-4"
             >
-                Meet your tutor 
+                Meet Your Tutor 
             </h2>
             <div className="max-w-2xl dark:bg-[#00538a36] bg-[#00538a12] rounded-lg shadow-sm p-6">
                 <div className="flex flex-col justify-center items-center">

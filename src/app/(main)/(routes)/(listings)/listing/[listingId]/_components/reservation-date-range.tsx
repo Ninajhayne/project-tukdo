@@ -269,7 +269,7 @@ export function ReservationDateRange({
     //console.log("Disabled Dates:", disabledDates);
 
     return (
-        <Card className="p-4">
+        <Card className="p-4 dark:bg-[#00538a36] bg-[#00538a12]">
             <CardHeader className="px-0 md:px-2 py-2">
                 <CardTitle className="flex flex-row justify-between items-center lg:text-base text-xs">
                     <div className="text-left flex flex-row items-center">
@@ -302,7 +302,7 @@ export function ReservationDateRange({
                         */}
                         
                         <p className="text-slate-500 text-sm">
-                            {!listing.numOfRatings ? '-' :
+                            {!listing.numOfRatings ? 'No reviews' :
                             listing.numOfRatings === 1 ? `${listing.numOfRatings} review` :
                             `${listing.numOfRatings} reviews`}
                         </p>
@@ -434,6 +434,36 @@ export function ReservationDateRange({
                     </form>
                 </Form>
                 <Separator className="my-1"/>
+                <div>
+                    <div className="flex flex-col justify-center items-center">
+                        <div className="flex flex-row justify-between w-full">
+                            <p className="text-sm">
+                                {currencyFormater({
+                                    amount: listing.fee!,
+                                    currency: "usd"
+                                })} x {calculateNumberOfDays()} days
+                            </p>
+                            <p>
+                                    {currencyFormater({
+                                        amount: totalPrice - tukdoServiceFee,
+                                        currency: "usd"
+                                    })}
+                            </p>
+                        </div>
+                        <div className="flex flex-row justify-between w-full">
+                            <p className="text-sm">
+                                Tukdo service fee
+                            </p>
+                            <p>
+                                {currencyFormater({
+                                    amount: tukdoServiceFee,
+                                    currency: "usd"
+                                })}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {/*
                 <Collapsible>
                     <CollapsibleTrigger>
                         <div className="underline flex items-center gap-1 pb-2">
@@ -441,7 +471,7 @@ export function ReservationDateRange({
                         </div>
                     </CollapsibleTrigger>
                     <CollapsibleContent>
-                        <div className="flex flex-col justify-center items-center">
+                        <dSiv className="flex flex-col justify-center items-center">
                             <div className="flex flex-row justify-between w-full">
                                 <p className="text-sm underline">
                                     {currencyFormater({
@@ -470,6 +500,7 @@ export function ReservationDateRange({
                         </div>
                     </CollapsibleContent>
                 </Collapsible>
+                */}
                 <Separator/>
                 {listing.fee === 0 || !listing.fee ? (
                     <h2 className="items-center">
@@ -477,11 +508,11 @@ export function ReservationDateRange({
                     </h2>
                 ) : (
                     <div className="flex flex-row justify-between w-full">
-                        <p className="text-sm">
+                        <p className="text-lg font-bold">
                             Total Price
                         </p>
                         {totalPrice !== 0 && (
-                            <p>
+                            <p className="text-lg font-bold">
                                 {currencyFormater({
                                     amount: totalPrice,
                                     currency: "usd"
