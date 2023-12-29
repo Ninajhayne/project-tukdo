@@ -25,7 +25,7 @@ export const DashboardCoursesList = ({
             </h2>
             <Separator
             />
-            <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-3">
                 {items.map((item) => (
                     <CourseCard
                         key={item.id}
