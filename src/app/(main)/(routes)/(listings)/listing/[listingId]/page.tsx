@@ -114,8 +114,7 @@ const ListingIdPage = async ({
     
     //console.log("Reservations:", reservations);
     return (
-        <div className="flex flex-col md:flex-row w-full p-2">
-            <div className="w-full md:w-2/3 p-2 order-2 md:order-1">
+       <>
                 <Breadcrumbs
                     segments={[
                     {
@@ -133,8 +132,10 @@ const ListingIdPage = async ({
                     },
                     
                     ]}
-                    className="pb-4"
+                    className="pb-0 xs:pb-4 lg:pb-0 pt-6 md:py-8 container"
                 />
+        <div className="flex flex-col md:flex-row w-full">
+            <div className="w-full md:w-2/3 order-2 md:order-1 pt-6 md:py-8 container">
                 <div className="mb-2">
                     <div className="flex flex-col mb-4 md:flex-row space-y-4 md:space-y-0 md:space-x-4">
                         <div className="flex items-center">
@@ -143,18 +144,20 @@ const ListingIdPage = async ({
                                 src={mentorListing.mentor.imageUrl}
                                 width={50}
                                 height={50}
-                                className="w-12 h-12 rounded-full mr-2"
+                                className="w-12 h-12 rounded-full mr-4"
                             />
                             <div>
-                                <h3 className="leading-none">
+                                <h3 className="leading-none mb-1">
                                     {mentorListing.mentor.name}
                                 </h3>
                                 <Badge className="rounded-none">
                                     {mentorListing.mode}
                                 </Badge>
+                                {/*
                                 <p className="text-xs">
                                     {mentorListing.listingCategory?.name}
                                 </p>
+                                */}
                             </div>
                         </div>
                     </div>
@@ -169,7 +172,7 @@ const ListingIdPage = async ({
                 </div>
 
                 <section>
-                    <h2 className="line-clamp-1 text-2xl font-bold">Intro</h2>
+                    {/*<h2 className="line-clamp-1 text-2xl font-bold">Intro</h2>*/}
                     <MentorIntroPlayer
                         videoUrl={mentorListing.videoUrl!}
                     />
@@ -179,17 +182,11 @@ const ListingIdPage = async ({
                 
                 <section>
                     <h2 className="line-clamp-1 text-2xl font-bold">
-                        Content Library
+                        Course Offered
                     </h2>
 
                 </section>
 
-                <Separator className="my-4"/>
-                <section>
-                    <ListingRatingsSectionList
-                        listing={mentorListing}
-                    />
-                </section>
                 <Separator className="my-4"/>
                 <section>
                     <h2 className="line-clamp-1 text-2xl font-bold">Location</h2>
@@ -198,6 +195,12 @@ const ListingIdPage = async ({
                     />
                 </section>
                 
+                <Separator className="my-4"/>
+                <section>
+                    <ListingRatingsSectionList
+                        listing={mentorListing}
+                    />
+                </section>
                 {/*
                 
                     <LocationMap
@@ -213,7 +216,7 @@ const ListingIdPage = async ({
                     </div>
                 */}
             </div>
-            <div className="md:w-1/3 order-1">
+            <div className="md:w-1/3 order-1 p-2">
                 
                 {/*
                 <ReservationDateRange
@@ -228,8 +231,8 @@ const ListingIdPage = async ({
                     <ShareLink/>
                 </div>
                 */}
-                
-                <div /*className="sticky top-20"*/>                        
+                   
+                <div className="sticky top-20">                        
                     <ReservationDateRange
                         listing={mentorListing}
                         //@ts-ignore
@@ -249,6 +252,7 @@ const ListingIdPage = async ({
                 </div>
             </div>
         </div>
+        </>
     )
 };  
  

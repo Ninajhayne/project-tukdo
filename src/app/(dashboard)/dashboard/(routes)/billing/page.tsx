@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image";
+
 import { redirect } from "next/navigation"
 import { currentUser } from "@clerk/nextjs"
 import { CheckIcon } from "lucide-react"
@@ -41,11 +43,23 @@ export default async function BillingPage() {
 
     return (
         <Shell variant="sidebar" as="div">
-        <PageHeader id="billing-header" aria-labelledby="billing-header-heading">
-            <PageHeaderHeading size="sm">Billing</PageHeaderHeading>
-            <PageHeaderDescription size="sm">
-            Manage your billing and subscription
-            </PageHeaderDescription>
+        <PageHeader id="billing-header" aria-labelledby="billing-header-heading" className="rounded-lg shadow-sm bg-[#F2602D] flex items-center gap-x-2">
+            <div className="p-6">
+                <PageHeaderHeading size="sm" className="text-[#FFFFFF] mb-2">Billing</PageHeaderHeading>
+                <PageHeaderDescription size="sm" className="text-[#FFFFFF]">
+                    Manage your billing and subscription
+                </PageHeaderDescription>
+            </div>
+            <div className="ml-auto flex-shrink- mr-6">
+                <Image
+                    src="/images/header/boy.png"
+                    alt=""
+                    width={100}
+                    height={100}
+                    className="w-32 h-28 object-cover"
+                    loading="lazy"
+                />
+            </div>
         </PageHeader>
         <section
             id="billing-info"

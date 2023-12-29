@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import dynamic from 'next/dynamic';
+import Image from "next/image";
 
 import {
     PageHeader,
@@ -23,11 +24,23 @@ export const metadata: Metadata = {
 export default function AccountPage() {
     return (
         <Shell variant="sidebar">
-            <PageHeader id="account-header" aria-labelledby="account-header-heading" className="px-4">
-                <PageHeaderHeading size="sm">Account</PageHeaderHeading>
-                <PageHeaderDescription size="sm">
-                    Manage your account settings
-                </PageHeaderDescription>
+            <PageHeader id="account-header" aria-labelledby="account-header-heading" className="rounded-lg shadow-sm bg-[#F2602D] flex items-center gap-x-2">
+                <div className="p-6">
+                    <PageHeaderHeading size="sm" className="text-[#FFFFFF] mb-2">Account</PageHeaderHeading>
+                    <PageHeaderDescription size="sm" className="text-[#FFFFFF]">
+                        Manage your account settings
+                    </PageHeaderDescription>
+                </div>
+                <div className="ml-auto flex-shrink mr-6">
+                    <Image
+                        src="/images/header/girl.png"
+                        alt=""
+                        width={100}
+                        height={100}
+                        className="w-32 h-28 object-cover"
+                        loading="lazy"
+                    />
+                </div>
             </PageHeader>
             <div className="grid grid-cols-1 md:grid-cols-2">
                 <ProfileEditor/>
