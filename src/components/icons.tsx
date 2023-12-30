@@ -69,6 +69,7 @@ import {
     CreditCardIcon,
     Users,
     Library,
+    MessageCircle,
   } from "lucide-react"
 
   
@@ -152,6 +153,7 @@ import {
     book: Book,
     usergroup: Users,
     library: Library,
+    chat: MessageCircle,
 
     academicsCategory: PiBookOpenTextLight,
     businessCategory: RxBarChart,
