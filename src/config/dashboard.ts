@@ -22,7 +22,7 @@ export const dashboardConfig: DashboardConfig = {
         {
             title: "Messages",
             href: "/plaza",
-            icon: "at",
+            icon: "chat",
             items: [],
         },
         {
@@ -38,7 +38,7 @@ export const dashboardConfig: DashboardConfig = {
             items: [],
         },
         {
-            title: "Create",
+            title: "Create Course",
             href: "/dashboard/mentor/courses",
             icon: "list",
             items: [],
@@ -50,9 +50,9 @@ export const dashboardConfig: DashboardConfig = {
             items: [],
         },
         {
-            title: "Profile",
+            title: "Tutor Profile",
             href: "/dashboard/mentor/profile",
-            icon: "mentorProfile",
+            icon: "usergroup",
             items: [],
         },
         {
