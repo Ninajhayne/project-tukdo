@@ -45,9 +45,11 @@ export async function POST(
         }
 
         // Calculate the new averageRating
-        const newAverageRating = (
+        {/*const newAverageRating = (
             (course.averageRating * course.numOfRatings) + values.rating
-        ) / (course.numOfRatings + 1);
+        ) / (course.numOfRatings + 1);*/}
+
+        const newAverageRating = course.averageRating + values.rating;
 
         const newRating = newAverageRating / (course.numOfRatings + 1);
 
