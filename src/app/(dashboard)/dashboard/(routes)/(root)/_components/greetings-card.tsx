@@ -50,7 +50,11 @@ export const GreetingsCardSpotlight = ({
 			onBlur={handleBlur}
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
-			className='relative flex items-center justify-center overflow-hidden rounded-xl border  bg-[#F2602D] px-8 py-16'
+			className='relative items-center justify-center overflow-hidden rounded-xl border px-8 py-16'
+			style={{
+				backgroundImage: 'url("/images/header/dashboard.png")',
+				backgroundSize: 'cover',
+			  }}
 		>
 			<div
 				className='pointer-events-none absolute -inset-px opacity-0 transition duration-300'
@@ -59,6 +63,7 @@ export const GreetingsCardSpotlight = ({
 				background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(255,182,255,.1), transparent 40%)`,
 				}}
 			/>
+			{/*
 			<div className="ml-auto flex-shrink-">
                 <Image
                     src="/images/header/owl.png"
@@ -69,10 +74,12 @@ export const GreetingsCardSpotlight = ({
                     loading="lazy"
                 />
             </div>
-			<div className="absolute bottom-0 left-0">
-				<div className="flex flex-col font-bold text-xl text-slate-200 leading-none mb-6 ml-6">
-					<span>Good day,</span>
-					<span className='bg-[#00528a] bg-clip-text text-xl text-transparent'>
+			*/}
+			{/*<div className="absolute bottom-0 left-0">*/}
+			<div>
+				<div className="flex flex-col font-bold text-xl text-slate-200 leading-none ml-2">
+					<h1 className="font-bold tracking-tighter lg:leading-[1.1] text-2xl md:text-3xl text-[#ffffff] mb-2">Good Day,</h1>					
+					<span className="bg-clip-text text-xl text-[#ffffff]">
 						{name}
 					</span>
 				</div>
