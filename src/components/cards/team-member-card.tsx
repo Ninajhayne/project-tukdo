@@ -27,8 +27,8 @@ export function TeamMemberCard({ members }: MemberCardProps) {
                     alt={`${members.name} users`}
                     className="rounded-full h-40"
                     style={{position: "relative", width: "100%", height: "100%" }}
-                    width={40}
-                    height={40}
+                    width={3014}
+                    height={3014}
                     loading="lazy"
                 
                 />
