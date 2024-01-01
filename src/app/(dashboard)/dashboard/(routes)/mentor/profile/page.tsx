@@ -13,6 +13,7 @@ import { db } from "@/lib/db";
 
 import { auth, currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
+import Image from "next/image";
 
 import {
     PageHeader,
@@ -39,6 +40,8 @@ import { MentorVideoForm } from "./_components/mentor-video-form";
 import { MentorServerForm } from "./_components/mentor-server-form";
 import ProfileEditor from "@/components/account/profile-editor";
 import { MentorCVForm } from "./_components/mentor-cv-form";
+
+import { Shell } from "@/components/shells/shell"
 
 
 // Dynamically import the LocationForm component
@@ -98,28 +101,39 @@ export default async function MentorProfilePage() {
     const isComplete = requiredFields.every(Boolean);
 
     return (
-        <div className="p-6">
+        <Shell variant="sidebar" as="div">
             <PageHeader
                 id="dashboard-tutor-profile-page-header"
                 aria-labelledby="dashboard-tutor-profile-page-header-heading"
             >
                 <div>
-                    <div className="flex items-center justify-between">
-                        <PageHeader
-                            id="tutor-profile-page-header"
-                            aria-labelledby="tutor-profile-page-header-heading"
-                        >
-                            <PageHeaderHeading size="sm">Profile Setup</PageHeaderHeading>
-                            <PageHeaderDescription size="sm">
+                    <PageHeader
+                        id="tutor-profile-page-header"
+                        aria-labelledby="tutor-profile-page-header-heading"
+                        className="rounded-lg shadow-sm bg-[#F2602D] flex items-center mb-4"
+                    >
+                        <div className="p-6">
+                            <PageHeaderHeading size="sm" className="text-[#FFFFFF] mb-2">Tutor Profile</PageHeaderHeading>
+                            <PageHeaderDescription size="sm" className="text-[#FFFFFF]">
                                 Complete all fields {completionText}
                             </PageHeaderDescription>
-                        </PageHeader>
-                        <MentorProfileActions
-                            disabled={!isComplete}
-                            listingId={listing.id}
-                            isListed={listing.isListed}
-                        />
-                    </div>
+                        </div>
+                        <div className="ml-auto flex-shrink- mr-6">
+                            <Image
+                                src="/images/header/girl.png"
+                                alt=""
+                                width={100}
+                                height={100}
+                                className="w-32 h-28 object-cover"
+                                loading="lazy"
+                            />
+                        </div>
+                    </PageHeader>
+                    <MentorProfileActions
+                        disabled={!isComplete}
+                        listingId={listing.id}
+                        isListed={listing.isListed}
+                    />
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
                         <div className="space-y-4">
@@ -182,6 +196,6 @@ export default async function MentorProfilePage() {
                     </div>
                 </div>
             </PageHeader>
-        </div>
+        </Shell>
     );
 };
