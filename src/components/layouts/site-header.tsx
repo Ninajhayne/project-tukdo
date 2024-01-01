@@ -88,7 +88,7 @@ export function SiteHeader({ user }: SiteHeaderProps) {
                           aria-hidden="true"
                         />
                         Dashboard
-                        <DropdownMenuShortcut>⌘D</DropdownMenuShortcut>
+                        {/*<DropdownMenuShortcut>⌘D</DropdownMenuShortcut>*/}
                       </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
@@ -98,7 +98,7 @@ export function SiteHeader({ user }: SiteHeaderProps) {
                           aria-hidden="true"
                         />
                         Messages
-                        <DropdownMenuShortcut>⌘M</DropdownMenuShortcut>
+                        {/*<DropdownMenuShortcut>⌘M</DropdownMenuShortcut>*/}
                       </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
@@ -108,7 +108,7 @@ export function SiteHeader({ user }: SiteHeaderProps) {
                           aria-hidden="true"
                         />
                         Settings
-                        <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+                       {/* <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>*/}
                       </Link>
                     </DropdownMenuItem>
                   </DropdownMenuGroup>
@@ -120,7 +120,7 @@ export function SiteHeader({ user }: SiteHeaderProps) {
                         aria-hidden="true"
                       />
                       Log out
-                      <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+                      {/*<DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>*/}
                     </Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
