@@ -14,7 +14,7 @@ export default function DashboardLoading() {
           <Skeleton className="block h-4 w-full md:hidden" />
         </div>
       </Card>
-      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {Array.from({ length: 3 }).map((_, i) => (
           <Card key={i} className="h-full">
             <AspectRatio ratio={21 / 9}>

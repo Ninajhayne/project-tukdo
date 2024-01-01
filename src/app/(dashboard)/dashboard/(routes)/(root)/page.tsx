@@ -56,7 +56,7 @@ export default async function Dashboard() {
 						</div>
 						*/}
 						
-						<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+						<div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2">
 							<GreetingsCardSpotlight
 								name={profile.name}
 							/>

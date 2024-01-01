@@ -11,7 +11,7 @@ interface CourseRatingsSectionProps {
     };
 };
 
-export const CourseRatingsSectionList = async ({
+export const CourseRatingsSectionList = async ({   
     course,
 }: CourseRatingsSectionProps) => {
     //const { onOpen } = useModal();
@@ -33,12 +33,12 @@ export const CourseRatingsSectionList = async ({
         <div>
             <h2 className="line-clamp-1 text-xl sm:text-2xl font-bold mb-4">Course Reviews</h2>
 
-            <div className="flex items-center text-center justify-center text-xl  space-x-3">
+            <div className="flex items-center text-center justify-center text-xl space-x-3">
 
                 <p className="text-5xl">
-                {!course.averageRating
+                {!course.rating
                     ? "0"
-                    : (course.averageRating / course.numOfRatings).toFixed(1)}
+                    : course.rating.toFixed(1)}
                 </p>
                 <div className="px-1 text-base font-semibold">
                     <p>Out of</p>
@@ -57,6 +57,8 @@ export const CourseRatingsSectionList = async ({
                 {/*
                 <p>
                     ★ {!course.rating ? "No ratings yet" : course.rating.toFixed(2)}
+                                        : (course.averageRating / course.numOfRatings).toFixed(1)}
+
                 </p>
 
                 <p className="px-1">

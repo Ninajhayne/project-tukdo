@@ -159,7 +159,7 @@ export default async function IndexPage() {
 						Find curated content that suits your learning journey.
 					</Balancer>
 				</div>
-				<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+				<div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 					{courseCategories.map((category) => (
 						<CourseCategoryCard key={category.title} category={category} />
 					))}
@@ -225,7 +225,7 @@ export default async function IndexPage() {
 					</Link>
 				</div>
 				<div className="space-y-8">
-					<div className="grid gap-4 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+					<div className="grid gap-6 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 						<React.Suspense
 							fallback={Array.from({ length: 8 }).map((_, i) => (
 								<FeaturedCourseCardSkeleton key={i} />
@@ -283,7 +283,7 @@ export default async function IndexPage() {
 					</Link>
 				</div>
 				<div className="space-y-8">
-					<div className="grid gap-4 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+					<div className="grid gap-6 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 						<React.Suspense
 							fallback={Array.from({ length: 4 }).map((_, i) => (
 								<FeaturedMentorSkeleton key={i} />

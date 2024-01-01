@@ -35,7 +35,7 @@ export async function CourseCategoryCard({ category }: CategoryCardProps) {
 		
 		<Link key={category.title} href={`/courses/?categoryId=${category.id}`}>
 			<span className="sr-only">{category.title}</span>
-			<Card className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-transparent transition-colors hover:bg-muted/50">
+			<Card className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg dark:bg-[#00538a36] bg-[#00538a12] transition-colors hover:bg-muted/50">
 			<CardHeader>
 				<div className="grid h-11 w-11 place-items-center rounded-full border-2">
 					<category.icon className="h-5 w-5" aria-hidden="true" />
