@@ -52,7 +52,7 @@ export default async function SignInPage() {
                     </div>
                     <SignInForm />
                 </CardContent>
-                <CardFooter className="flex flex-wrap items-center justify-between gap-2">
+                <CardFooter className="flex-wrap items-center justify-between gap-2">
                     <div className="text-sm text-muted-foreground">
                         <span className="mr-1 hidden sm:inline-block">
                             Don&apos;t have an account?

@@ -14,7 +14,7 @@ import {
 
 export default function SignOutPage() {
     return (
-        <Shell className="max-w-lg">
+        <Shell className="max-w-sm">
             <Card>
                 
                 <CardHeader className="space-y-1 items-center text-center">

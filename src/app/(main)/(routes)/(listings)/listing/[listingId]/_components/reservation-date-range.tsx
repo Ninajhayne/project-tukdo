@@ -292,7 +292,7 @@ export function ReservationDateRange({
                     </div>
                     <div className="flex flex-row items-center">
                         <p className="font-semibold">
-                            ★ {listing.rating.toFixed(2)}
+                            <span className="text-[#FFE600]">★</span> {listing.rating.toFixed(1)}
                         </p>
                         <Dot className="w-4 h-4 mt-1"/>
                         {/*
