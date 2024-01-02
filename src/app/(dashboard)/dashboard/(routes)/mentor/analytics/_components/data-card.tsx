@@ -11,17 +11,22 @@ interface DataCardProps {
     value: number;
     label: string;
     shouldFormat?: boolean;
+    bg: string;
 }
   
 export const DataCard = ({
     value,
     label,
     shouldFormat,
+    bg,
 }: DataCardProps) => {
+    const cardStyle = {
+        backgroundColor: bg,
+    };
     return (
-        <Card>
+        <Card style={cardStyle} className="border-none shadow-none">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">
+                <CardTitle className="text-base font-medium">
                     {label}
                 </CardTitle>
             </CardHeader>

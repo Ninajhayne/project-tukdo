@@ -26,10 +26,12 @@ const AnalyticsPage = async () => {
                     label="Total Revenue"
                     value={totalRevenue}
                     shouldFormat
+                    bg="#00538a12"
                 />
                 <DataCard
                     label="Total Sales"
                     value={totalSales}
+                    bg="#F2602D12"
                 />
             </div>
             <Chart

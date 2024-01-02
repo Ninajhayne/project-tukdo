@@ -32,7 +32,7 @@ export const ServerHeader = ({
                 >
                     {server.name}
                     <ChevronDown
-                        className="h-5 w-5 ml-auto"
+                        className="h-5 w-5 ml-2"
                     />
                 </button>
             </DropdownMenuTrigger>
