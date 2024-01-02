@@ -85,7 +85,6 @@ export function VerifyEmailForm() {
                     name="code"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Verification Code</FormLabel>
                             <FormControl>
                                 <Input
                                     {...field}
