@@ -51,7 +51,7 @@ export const NavigationSideBar = async () => {
                 ))}
             </ScrollArea>
             <div className="pb-3 mt-auto flex items-center flex-col gap-y-4">
-                <Link href={"/"} className="hover:bg-[#C44D24] hover:text-white h-10 w-10">
+                <Link href={"/"} className="hover:bg-[#C44D24] hover:text-white h-10 w-10 inline-flex items-center justify-center rounded-md">
                     <HomeIcon
                         className="h-5 w-5"
                     /> 
