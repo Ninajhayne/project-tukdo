@@ -33,7 +33,6 @@ export default async function SignInPage() {
                 <CardHeader className="space-y-1 items-center text-center">
                     <CardTitle className="text-2xl">
                         <span className="text-[#F2602D]">Sign</span> <span className="text-[#00528A]"> In</span>
-
                     </CardTitle>
                     <CardDescription>
                         Choose your preferred sign in method
