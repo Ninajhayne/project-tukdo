@@ -33,10 +33,12 @@ export default async function SignUpPage() {
         <Shell className="max-w-lg">
             <Card>
                 
-                <CardHeader className="space-y-1">
-                    <CardTitle className="text-2xl">Sign up</CardTitle>
+                <CardHeader className="space-y-1 items-center text-center">
+                    <CardTitle className="text-2xl">
+                        <span className="text-[#F2602D]">Sign</span> <span className="text-[#00528A]"> Up</span>
+                    </CardTitle>
                     <CardDescription>
-                        Choose your preferred sign up method
+                        Choose your preferred sign up method  
                     </CardDescription>
                 </CardHeader>
                 <CardContent className="grid gap-4">

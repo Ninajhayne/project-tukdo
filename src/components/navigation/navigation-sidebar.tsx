@@ -32,7 +32,7 @@ export const NavigationSideBar = async () => {
     });
 
     return (
-        <div className="space-y-4 flex flex-col items-center h-full text-primary w-full bg-[#00538ae2] py-3">
+        <div className="space-y-4 flex flex-col items-center h-full text-primary w-full bg-zinc-100 dark:bg-gray-950 py-3">
             {/*
                 <NavigationAction/>
             */}
@@ -53,10 +53,10 @@ export const NavigationSideBar = async () => {
             <div className="pb-3 mt-auto flex items-center flex-col gap-y-4">
                 <Link href={"/"} className="hover:bg-[#C44D24] hover:text-white h-10 w-10 inline-flex items-center justify-center rounded-md">
                     <HomeIcon
-                        className="h-5 w-5"
+                        className="h-4 w-4"
                     /> 
                 </Link>
-                <ThemeToggle/>
+                <ThemeToggle />
                 <UserButton
                     afterSignOutUrl="/"
                     appearance={{
