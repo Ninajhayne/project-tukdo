@@ -37,12 +37,12 @@ export const ServerHeader = ({
                 </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent
-                className="w-56 text-xs font-medium text-black dark:text-neutral-400 space-y-[2px]"
+                className="w-56 text-xs text-foreground dark:text-[#ffffff]"
             >
                 {isModerator && (
                     <DropdownMenuItem
                         onClick={() => onOpen("invite", { server })}
-                        className="text-indigo-600 dark:text-indigo-400 px-3 py-2 text-sm cursor-pointer"
+                        className="text-indigo-600 dark:text-indigo-400 px-2 py-1.5 text-sm cursor-pointer"
                         disabled
                     >
                         Invite People
@@ -51,13 +51,13 @@ export const ServerHeader = ({
                         />
                     </DropdownMenuItem>
                 )}
-                {isAdmin && (
+                {isModerator && (
                     <DropdownMenuItem
-                        onClick={() => onOpen("editServer", { server })}
+                        onClick={() => onOpen("createChannel")}
                         className="px-3 py-2 text-sm cursor-pointer"
                     >
-                        Server Settings
-                        <Settings
+                        Create Channel
+                        <PlusCircle
                             className="h-4 w-4 ml-auto"
                         />
                     </DropdownMenuItem>
@@ -73,13 +73,13 @@ export const ServerHeader = ({
                         />
                     </DropdownMenuItem>
                 )}
-                {isModerator && (
+                {isAdmin && (
                     <DropdownMenuItem
-                        onClick={() => onOpen("createChannel")}
+                        onClick={() => onOpen("editServer", { server })}
                         className="px-3 py-2 text-sm cursor-pointer"
                     >
-                        Create Channel
-                        <PlusCircle
+                        Settings
+                        <Settings
                             className="h-4 w-4 ml-auto"
                         />
                     </DropdownMenuItem>

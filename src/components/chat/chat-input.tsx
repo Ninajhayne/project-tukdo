@@ -90,14 +90,14 @@ export const ChatInput = ({
                                     <button
                                         type="button"
                                         onClick={() => onOpen("messageFile", { apiUrl, query })}
-                                        className="absolute top-7 left-8 h-[24px] w-[24px] bg-zinc-500 dark:bg-zinc-400 hover:bg-zinc-600 dark:hover:bg-zinc-300 transition rounded-full p-1 flex items-center justify-center"
+                                        className="absolute top-7 left-8 h-[24px] w-[24px] bg-[#F2602D] dark:bg-[#F2602D] hover:bg-[#C44D24] dark:hover:bg-[#C44D24]transition rounded-full p-1 flex items-center justify-center"
                                     >
                                         <Plus className="text-white dark:text-[#313338]" />
                                     </button>
                                     <Input
                                         disabled={isLoading}
-                                        className="px-14 py-6 bg-zinc-200/90 dark:bg-zinc-700/75 border-none border-0 focus-visible:ring-0 focus-visible:ring-offset-0 text-zinc-600 dark:text-zinc-200"
-                                        placeholder={`Message ${type === "conversation" ? name : "#" + name}`}
+                                        className="px-14 py-6 bg-[#00538a12] dark:bg-[#00538a36] border-none border-0 focus-visible:ring-0 focus-visible:ring-offset-0 text-zinc-600 dark:text-zinc-200"
+                                        placeholder={`Write a message..`}
                                         {...(isLoading ? {} : field)}
                                         //{...field}
                                     />

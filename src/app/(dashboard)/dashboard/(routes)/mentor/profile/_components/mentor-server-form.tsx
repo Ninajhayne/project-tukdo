@@ -106,9 +106,9 @@ export const MentorServerForm = ({
                 aria-labelledby="tutor-server-form-heading"
             >
                 <CardHeader>
-                    <CardTitle>Customize your server</CardTitle>
+                    <CardTitle>Customize Your Group Message</CardTitle>
                     <CardDescription>
-                        Give your server a personality with a name and an image. You can always change it later.
+                        Give your group message a personality with a name and an image. You can always change it later.
                     </CardDescription>
                 </CardHeader>
                 <CardContent>
