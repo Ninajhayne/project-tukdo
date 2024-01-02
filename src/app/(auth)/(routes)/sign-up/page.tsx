@@ -56,7 +56,7 @@ export default async function SignUpPage() {
                     <SignUpForm />
                 </CardContent>
                 <CardFooter>
-                    <div className="text-sm text-muted-foreground">
+                    <div className="text-sm text-muted-foreground text-center">
                         Already have an account?{" "}
                         <Link
                             aria-label="Sign in"
