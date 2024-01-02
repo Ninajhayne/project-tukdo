@@ -22,7 +22,7 @@ export default function VerifyEmailPage() {
             <Card>
                 <CardHeader className="space-y-1 items-center text-center">
                     <CardTitle className="text-2xl">
-                        <span className="text-[#F2602D]">Verify Your</span> <span className="text-[#00528A]"> Email Address</span>
+                        <span className="text-[#F2602D]">Verify your</span> <span className="text-[#00528A]"> email address</span>
                     </CardTitle>
                     <CardDescription>
                         We emailed you a six-digit code. Please enter the code below to complete your account creation.

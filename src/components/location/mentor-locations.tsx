@@ -100,7 +100,7 @@ const MentorLocations = ({
 								<div className="flex items-center">
 									<svg
 										aria-hidden="true"
-										className="w-5 h-5"
+										className="w-5 h-5 text-[#FFE600]"
 										fill="currentColor"
 										viewBox="0 0 20 20"
 										xmlns="http://www.w3.org/2000/svg"
@@ -113,21 +113,21 @@ const MentorLocations = ({
 									</span>
 								</div>
 								<div className="mt-2">
-									<Link href={`/listing/${listing.id}`}>
-										<button className="text-xs btn btn-xs btn-outline rounded-none">
-											View
-										</button>
-									</Link>
-								</div>
-								<div className="mt-2">
 									<Link
 										//@ts-ignore
 										href={`http://maps.google.com/?cbll=${listing?.location?.lat},${listing?.location?.lon}&cbp=12,20.09,,0,5&layer=c`}
 										rel="noopener noreferrer"
 										target="_blank"
 									>
-										<Button size="sm" variant="plaza_button">
+										<button className="text-xs btn btn-xs btn-outline rounded-none">
 											Google Street View
+										</button>
+									</Link>
+								</div>
+								<div className="mt-2">
+									<Link href={`/listing/${listing.id}`}>
+										<Button size="sm" variant="plaza_button" className="w-full">
+											View
 										</Button>
 									</Link>
 								</div>
