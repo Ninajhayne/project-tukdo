@@ -32,12 +32,6 @@ export const dashboardConfig: DashboardConfig = {
             items: [],
         },
         {
-            title: "Collections",
-            href: "/dashboard/collections",
-            icon: "dollarSign",
-            items: [],
-        },
-        {
             title: "Create Course",
             href: "/dashboard/mentor/courses",
             icon: "list",
@@ -64,3 +58,11 @@ export const dashboardConfig: DashboardConfig = {
     ],
 }
 
+/*
+        {
+            title: "Collections",
+            href: "/dashboard/collections",
+            icon: "dollarSign",
+            items: [],
+        },
+        */
