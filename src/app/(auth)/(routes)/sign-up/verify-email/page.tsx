@@ -20,8 +20,10 @@ export default function VerifyEmailPage() {
     return (
         <Shell className="max-w-lg">
             <Card>
-                <CardHeader className="space-y-1">
-                    <CardTitle className="text-2xl">Verify email</CardTitle>
+                <CardHeader className="space-y-1 items-center text-center">
+                    <CardTitle className="text-2xl">
+                        <span className="text-[#F2602D]">Verify</span> <span className="text-[#00528A]"> Email</span>
+                    </CardTitle>
                     <CardDescription>
                         Verify your email address to complete your account creation
                     </CardDescription>
