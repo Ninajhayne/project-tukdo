@@ -463,6 +463,7 @@ export function ReservationDateRange({
                         </div>
                     </div>
                 </div>
+
                 <Separator/>
                 {listing.fee === 0 || !listing.fee ? (
                     <h2 className="items-center">
