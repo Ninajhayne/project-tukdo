@@ -3,7 +3,13 @@
 import { db } from "@/lib/db";
 import { currentProfile } from "../current-profile";
 
-export const getMyReservation = async () => {
+interface GetMyReservationProps {
+    listingId: string;
+}
+
+export const getMyReservation = async ({
+    listingId,
+}: GetMyReservationProps) => {
     //const {userId} = auth();
     /*
     if(!userId) {
@@ -19,7 +25,8 @@ export const getMyReservation = async () => {
 
     const myReservation = await db.reservation.findUnique({
         where: {
-            userId: profile.id
+            userId: profile.id,
+            listingId,
         }
     });
 

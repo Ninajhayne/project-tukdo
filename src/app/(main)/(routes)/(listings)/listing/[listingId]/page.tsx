@@ -21,9 +21,11 @@ import { Breadcrumbs } from "@/components/pagers/breadcrumbs";
 import { Separator } from "@/components/ui/separator";
 import { ShareLink } from "@/components/share-link/share-link";
 import { ListingRatingModal } from "@/components/modals/listing/listing-rating-modal";
+import { ContentLibrary } from "@/components/cards/content-library";
 
 import { getMyReservation } from "@/lib/reservation/get-my-reservation";
 import { compareListing } from "@/lib/reservation/compare-listing";
+import { FindOtherContent } from "@/lib/find-other-content";
 
 import { MentorIntroPlayer } from "./_components/mentor-intro-player";
 import { ReservationDateRange } from "./_components/reservation-date-range";
@@ -100,7 +102,10 @@ const ListingIdPage = async ({
         },
     });
     
-    const myReservation = await getMyReservation();
+    const myReservation = await getMyReservation({
+        listingId: mentorListing.id
+    });
+
     const disableButton = await compareListing(mentorListing.id);
 
     const myRating = await db.listingRating.findUnique({
@@ -110,6 +115,11 @@ const ListingIdPage = async ({
                 userId: userId || "",
             },
         },
+    });
+
+    const contentLibrary = await FindOtherContent({
+        mentorId: mentorListing.mentorId,
+        isListing: true,
     });
     
     //console.log("Reservations:", reservations);
@@ -184,7 +194,15 @@ const ListingIdPage = async ({
                     <h2 className="line-clamp-1 text-2xl font-bold">
                         Course Offered
                     </h2>
-
+                    
+                    <h4
+                        className="pb-2"
+                    >
+                        More content by {mentorListing.mentor.name}
+                    </h4>
+                    <ContentLibrary
+                        contents={contentLibrary}
+                    />
                 </section>
 
                 <Separator className="my-4"/>
