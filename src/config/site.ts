@@ -13,8 +13,8 @@ export const siteConfig = {
   name: "Tukdo",
   description:
     "An E-Learning Community Platform",
-  url: "https://tukdo.vercel.app",
-  ogImage: "https://tukdo.vercel.app/opengraph-image.png",
+  url: "https://tukdo-edu.vercel.app",
+  ogImage: "https://tukdo-edu.vercel.app/opengraph-image.png",
   mainNav: [
     {
       title: "Menu",
