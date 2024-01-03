@@ -89,7 +89,7 @@ export default async function IndexPage() {
 			<section
 				id="hero"
 				aria-labelledby="hero-heading"
-				className="w-full h-[105vh] xs:h-[105vh] md:h-[70vh] bg-[#00528A] lg:h-[80vh] px-6 xs:px-6 lg:px-9 xl:px-9 flex flex-col gap-4 py-6 text-center"
+				className="w-full bg-[#00528A] px-6 xs:px-6 lg:px-9 xl:px-9 flex flex-col gap-4 py-12 text-center"
 				>
 				<div className="grid grid-cols-1 gap-2 xs:gap-6 xl:gap-9 lg:gap-9 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
         
