@@ -463,44 +463,6 @@ export function ReservationDateRange({
                         </div>
                     </div>
                 </div>
-                {/*
-                <Collapsible>
-                    <CollapsibleTrigger>
-                        <div className="underline flex items-center gap-1 pb-2">
-                            Show price details <ChevronDown className="h-4 w-4 mt-1"/>
-                        </div>
-                    </CollapsibleTrigger>
-                    <CollapsibleContent>
-                        <dSiv className="flex flex-col justify-center items-center">
-                            <div className="flex flex-row justify-between w-full">
-                                <p className="text-sm underline">
-                                    {currencyFormater({
-                                        amount: listing.fee!,
-                                        currency: "usd"
-                                    })} x {calculateNumberOfDays()} days
-                                </p>
-                                <p>
-                                        {currencyFormater({
-                                            amount: totalPrice - tukdoServiceFee,
-                                            currency: "usd"
-                                        })}
-                                </p>
-                            </div>
-                            <div className="flex flex-row justify-between w-full">
-                                <p className="text-sm underline">
-                                    Tukdo service fee
-                                </p>
-                                <p>
-                                    {currencyFormater({
-                                        amount: tukdoServiceFee,
-                                        currency: "usd"
-                                    })}
-                                </p>
-                            </div>
-                        </div>
-                    </CollapsibleContent>
-                </Collapsible>
-                */}
                 <Separator/>
                 {listing.fee === 0 || !listing.fee ? (
                     <h2 className="items-center">

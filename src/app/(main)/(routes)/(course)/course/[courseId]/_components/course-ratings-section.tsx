@@ -11,7 +11,7 @@ interface CourseRatingsSectionProps {
     };
 };
 
-export const CourseRatingsSectionList = async ({   
+export const CourseRatingsSectionList = async ({
     course,
 }: CourseRatingsSectionProps) => {
     //const { onOpen } = useModal();
