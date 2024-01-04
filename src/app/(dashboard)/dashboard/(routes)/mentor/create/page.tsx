@@ -64,10 +64,11 @@ const CreatePage = () => {
     return (
         <div className="max-w-5xl mx-auto flex md:items-center md:justify-center h-full p-6">
             <div>
-                <h1 className="text-2xl">
+                <h2 className="text-xl font-semibold sm:text-2xl">
+
                     Name your course
-                </h1>
-                <p className="text-sm text-slate-600">
+                </h2>
+                <p className="text-sm text-muted-foreground">
                     What would you like to name your course? Don&apos;t worry, you can always change this later.
                 </p>
                 <Form {...form}>
@@ -92,7 +93,6 @@ const CreatePage = () => {
                                         />
                                     </FormControl>
                                     <FormDescription>
-                                        What will you teach in this course?
                                     </FormDescription>
                                     <FormMessage />
                                 </FormItem>

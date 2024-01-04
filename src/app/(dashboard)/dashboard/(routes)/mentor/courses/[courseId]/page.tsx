@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import type { Metadata } from "next"
 
 import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs";
@@ -12,13 +13,25 @@ import { AttachmentForm } from "./_components/attachment-form";
 import { ChaptersForm } from "./_components/chapters-form";
 import { Banner } from "@/components/course/banner";
 import { Actions } from "./_components/actions";
+import Image from "next/image";
+
+import {
+    PageHeader,
+    PageHeaderDescription,
+    PageHeaderHeading,
+} from "@/components/page-header"
+export const metadata: Metadata = {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
+    title: "Course Setup  | TUKDO",
+    description: "Manage your own course",
+}
 
 const CourseIdPage = async ({
     params
 }: {
     params: { courseId: string }
 }) => {
-    const { userId } = auth();
+    const { userId } = auth();  
 
     if(!userId) {
         return redirect("/");
@@ -75,24 +88,34 @@ const CourseIdPage = async ({
                     label="This course is unpublished. It will not be visible to the students."
                 />
             )}
-            <div className="p-6">
-                <div className="flex items-center justify-between">
-                    <div className="flex flex-col gap-y-2">
-                        <h1 className="text-2xl font-medium">
-                            Course Setup
-                        </h1>
-
-                        <span className="text-sm text-slate-700">
-                            Complete all fields {completionText}
-                        </span>
-                    </div>
+                <PageHeader
+                        id="course-setup-page-header"
+                        aria-labelledby="course-setuppage-header-heading"
+                        className="rounded-lg shadow-sm bg-[#F2602D] flex items-center mb-4"
+                    >
+                        <div className="p-6">
+                            <PageHeaderHeading size="sm" className="text-[#FFFFFF] mb-2">Course Setup</PageHeaderHeading>
+                            <PageHeaderDescription size="sm" className="text-[#FFFFFF]">
+                                Complete all fields {completionText}
+                            </PageHeaderDescription>
+                        </div>
+                        <div className="ml-auto flex-shrink- mr-6">
+                            <Image
+                                src="/images/header/girl.png"
+                                alt=""
+                                width={100}
+                                height={100}
+                                className="w-32 h-28 object-cover"
+                                loading="lazy"
+                            />
+                        </div>
+                    </PageHeader>
                     <Actions
                         disabled={!isComplete}
                         courseId={params.courseId}
                         isPublished={course.isPublished}
                     />
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-4">
                     <div>
                         <div className="flex items-center gap-x-2">
                             <h2 className="text-xl">
@@ -157,7 +180,6 @@ const CourseIdPage = async ({
                         
                     </div>
                 </div>
-            </div>
         </>
         
     );
