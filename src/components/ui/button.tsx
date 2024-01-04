@@ -24,6 +24,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         success: "bg-emerald-600 text-white hover:bg-emerald-600/80",
         plaza_button: "bg-[#F2602D] text-white hover:bg-[#C44D24]",
+        error: "bg-red-500 text-white hover:bg-red-500/80"
       },
       size: {
         default: "h-10 px-4 py-2",
