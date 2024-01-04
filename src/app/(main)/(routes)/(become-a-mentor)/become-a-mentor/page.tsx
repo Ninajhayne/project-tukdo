@@ -48,40 +48,17 @@ const BecomeAMentorPage = () => {
 	*/
 	const handleChangeRange = (newValue: any) => {
 		setEarnings(newValue);
-	};
+	};   
 
 	return (
 		<div className="pt-6 pb-12">
 			<div className="text-center justify-center pb-6">
-				{/*
-				<div className="flex justify-center">
-					<Image
-						className="h-12 w-12 pointer-events-none"
-						height={80}
-						width={80}
-						src="/images/heart-on-fire.webp"
-						alt="heart on fire"
-					/>
-				</div>
-				*/}
-				{/*
-				<h1 
-					className="flex flex-col text-transparent text-4xl md:text-6xl bg-clip-text bg-gradient-to-r from-gray-900 to-gray-600 dark:bg-gradient-to-r dark:from-rose-100 dark:to-teal-100"
-				>
-					<span className="font-extrabold">
-						Join Tukdo
-					</span>
-					<span className="font-medium text-3xl">
-						You could earn
-					</span>
-				</h1>
-				*/}
 
-				<h1 className="font-extrabold text-4xl md:text-6xl bg-clip-text relative bg-gradient-to-r from-gray-900 to-gray-600 dark:bg-gradient-to-r dark:from-rose-100 dark:to-teal-100">
+				<h1 className="font-extrabold text-4xl text-[#F2602D] md:text-6xl bg-clip-text relative bg-gradient-to-r from-gray-900 to-gray-600 dark:bg-gradient-to-r dark:from-rose-100 dark:to-teal-100">
                     Join
                     <span className="relative inline-flex sm:inline ml-1">
                         <span className="bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] blur-lg filter opacity-30 w-full h-full absolute inset-0"></span>
-						<span className="relative text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-600 dark:from-rose-100 dark:to-teal-100"> Tukdo </span>
+						<span className="text-[#00528A] relative bg-clip-text bg-gradient-to-r from-gray-900 to-gray-600 dark:from-rose-100 dark:to-teal-100"> Tukdo </span>
                     </span>
                 </h1>
 
@@ -178,7 +155,7 @@ const BecomeAMentorPage = () => {
 							</div>
 						*/}
 						
-
+						{/*
 						<div className="mt-6 m-auto space-y-6 md:w-8/12 lg:w-7/12">
 							<h1 className="text-center text-4xl font-bold text-gray-800 dark:text-white md:text-5xl">
 								Become a Tutor
@@ -201,6 +178,7 @@ const BecomeAMentorPage = () => {
 								</Button>
 							</div>
 						</div>
+					*/}
 					</div>
 				</div>
 			</div>
