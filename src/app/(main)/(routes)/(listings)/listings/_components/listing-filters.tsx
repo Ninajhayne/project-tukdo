@@ -106,7 +106,7 @@ const ListingFilters = ({
                 <Separator />
                 <div className="space-y-4">
                     <h3 className="text-sm font-medium tracking-wide text-foreground">
-                        Price range ($)
+                        Price range (₱)
                     </h3>
                     <Slider
                         variant="range"

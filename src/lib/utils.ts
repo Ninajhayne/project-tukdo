@@ -18,7 +18,7 @@ export function cn(...inputs: ClassValue[]) {
 
 export function formatPrice(
   price: number | string,
-  currency: "USD" | "EUR" | "GBP" | "BDT" = "USD",
+  currency: "PHP" | "EUR" | "GBP" | "BDT" = "PHP",
   notation: "compact" | "engineering" | "scientific" | "standard" = "standard"
 ) {
   return new Intl.NumberFormat("en-US", {
@@ -31,11 +31,11 @@ export function formatPrice(
 export function formatPriceV2(
   price: number | string,
   options: {
-    currency?: "USD" | "EUR" | "GBP" | "BDT"
+    currency?: "PHP" | "EUR" | "GBP" | "BDT"
     notation?: Intl.NumberFormatOptions["notation"]
   } = {}
 ) {
-  const { currency = "USD", notation = "compact" } = options
+  const { currency = "PHP", notation = "compact" } = options
 
   return new Intl.NumberFormat("en-US", {
     style: "currency",

@@ -45,7 +45,7 @@ export const reservation_columns: ColumnDef<Course>[] = [
 
       const formatted = new Intl.NumberFormat("en-US", {
         style: "currency",
-        currency: "USD"
+        currency: "PHP"
       }).format(price);
 
       return (

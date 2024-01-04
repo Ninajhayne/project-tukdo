@@ -282,7 +282,7 @@ export function ReservationDateRange({
                                 <p className="font-bold text-lg mr-1">
                                     {currencyFormater({
                                         amount: listing.fee!,
-                                        currency: "usd"
+                                        currency: "PHP"
                                     })}
                                 </p>
                                 <p>/ day</p>
@@ -440,13 +440,13 @@ export function ReservationDateRange({
                             <p className="text-sm">
                                 {currencyFormater({
                                     amount: listing.fee!,
-                                    currency: "usd"
+                                    currency: "PHP"
                                 })} x {calculateNumberOfDays()} days
                             </p>
                             <p>
                                     {currencyFormater({
                                         amount: totalPrice - tukdoServiceFee,
-                                        currency: "usd"
+                                        currency: "PHP"
                                     })}
                             </p>
                         </div>
@@ -457,7 +457,7 @@ export function ReservationDateRange({
                             <p>
                                 {currencyFormater({
                                     amount: tukdoServiceFee,
-                                    currency: "usd"
+                                    currency: "PHP"
                                 })}
                             </p>
                         </div>
@@ -478,7 +478,7 @@ export function ReservationDateRange({
                             <p className="text-lg font-bold">
                                 {currencyFormater({
                                     amount: totalPrice,
-                                    currency: "usd"
+                                    currency: "PHP"
                                 })}
                             </p>
                         )}
