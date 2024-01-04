@@ -5,6 +5,13 @@ import { getAnalytics } from "@/app/_actions/course/get-analytics";
 
 import { DataCard } from "./_components/data-card";
 import { Chart } from "./_components/chart";
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
+    title: "Analytics | TUKDO",
+    description: "",
+}
 
 const AnalyticsPage = async () => {
     const { userId } = auth();
