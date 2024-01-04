@@ -38,6 +38,10 @@ export const CourseSidePreview = ({
 }: CourseSidePreviewProps) => {
 
     return (
+        <Link 
+            href={`/course/${course.id}/chapters/${course.chapters[0].id}`}
+            className="text-sm"
+        >
         <Card className="dark:bg-[#00538a36] bg-[#00538a12]">
             <CardHeader>
                 <CourseVideoPreview
@@ -59,13 +63,14 @@ export const CourseSidePreview = ({
                             userId={userId}
                         />
                     )}
-
+                    {/*
                     <Link 
                         href={`/course/${course.id}/chapters/${course.chapters[0].id}`}
                         className="text-sm"
                     >
                         Debug: View
                     </Link>
+                        */}
                 </div>
             </CardContent>
             <CardFooter className="flex items-center justify-center">
@@ -77,6 +82,8 @@ export const CourseSidePreview = ({
                 <ShareLink/>
             </CardFooter>
         </Card>
+        </Link>
+
 
     );
 };
