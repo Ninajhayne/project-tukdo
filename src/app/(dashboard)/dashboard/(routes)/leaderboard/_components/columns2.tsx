@@ -53,9 +53,9 @@ export const columns2: ColumnDef<TutorListing["featuredTutor"]>[] = [
     accessorKey: "id",
     header: ({ column }) => {
       return (
-        <Button variant="ghost" onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
+        <span onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
           Rank
-        </Button>
+        </span>
       );
     },
     cell: (props) => <RankCell {...props as CustomCellContext<TutorListing["featuredTutor"]>} />,
@@ -65,9 +65,9 @@ export const columns2: ColumnDef<TutorListing["featuredTutor"]>[] = [
     accessorKey: "mentor.name",
     header: ({ column }) => {
       return (
-        <Button variant="ghost">
+        <span>
           Name
-        </Button>
+        </span>
       );
     },
     cell: ({ row }) => {
@@ -85,9 +85,9 @@ export const columns2: ColumnDef<TutorListing["featuredTutor"]>[] = [
     accessorKey: "rating",
     header: ({ column }) => {
       return (
-        <Button variant="ghost">
+        <span>
           Rating
-        </Button>
+        </span>
       );
     },
 

@@ -42,9 +42,9 @@ export const columns: ColumnDef<Course>[] = [
     accessorKey: "id",
     header: ({ column }) => {
       return (
-        <Button variant="ghost" onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
+        <span onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
           Rank
-        </Button>
+        </span>
       );
     },
     cell: (props) => <RankCell {...props as CustomCellContext<Course>} />,
@@ -54,9 +54,9 @@ export const columns: ColumnDef<Course>[] = [
     accessorKey: "title",
     header: ({ column }) => {
       return (
-        <Button variant="ghost">
+        <span>
           Title
-        </Button>
+        </span>
       );
     },
   },
@@ -64,9 +64,9 @@ export const columns: ColumnDef<Course>[] = [
     accessorKey: "rating",
     header: ({ column }) => {
       return (
-        <Button variant="ghost">
+        <span>
           Rating
-        </Button>
+        </span>
       );
     },
 
