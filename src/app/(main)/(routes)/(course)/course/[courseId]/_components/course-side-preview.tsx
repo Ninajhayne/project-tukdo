@@ -53,7 +53,7 @@ export const CourseSidePreview = ({
                     {purchase ? (
                         <Link href={`/course/${course.id}/chapters/${course.chapters[0].id}`}>
                             <Button className="w-full">
-                                View
+                                View Course
                             </Button>
                         </Link>
                         ) : (
