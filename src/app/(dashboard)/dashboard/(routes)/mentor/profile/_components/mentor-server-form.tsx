@@ -45,10 +45,10 @@ interface MentorServerFormProps {
 
 const formSchema = z.object({
     name: z.string().min(1, {
-        message: "Server name is required."
+        message: "Name is required."
     }),
     imageUrl: z.string().min(1, {
-        message: "Server image is required."
+        message: "Image is required."
     }),
     //serverId: z.string(),
 });
@@ -152,12 +152,12 @@ export const MentorServerForm = ({
                                                 <FormLabel
                                                     className="uppercase text-xs font-bold"
                                                 >
-                                                    Server Name
+                                                    Group Name
                                                 </FormLabel>
                                                 <FormControl>
                                                     <Input
                                                         disabled={isLoading}
-                                                        placeholder="Enter Server Name"
+                                                        placeholder="Enter Group Name"
                                                         {...field}
                                                     />
                                                 </FormControl>

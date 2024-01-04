@@ -35,10 +35,10 @@ import { useEffect } from "react";
 
 const formSchema = z.object({
     name: z.string().min(1, {
-        message: "Server name is required."
+        message: "Name is required."
     }),
     imageUrl: z.string().min(1, {
-        message: "Server image is required."
+        message: "Image is required."
     })
 });
 
@@ -126,13 +126,13 @@ export const EditServerModal = () => {
                                             className="uppercase text-xs font-bold text-zinc-500 dark:text-secondary/70"
 
                                         >
-                                            Server Name
+                                            Group Name
                                         </FormLabel>
                                         <FormControl>
                                             <Input
                                                 disabled={isLoading}
                                                 className="bg-zinc-300/50 border-0 focus-visible:ring-0 text-black focus-visible:ring-offset-0"
-                                                placeholder="Enter Server Name"
+                                                placeholder="Enter Group Name"
                                                 {...field}
                                             />
                                         </FormControl>
