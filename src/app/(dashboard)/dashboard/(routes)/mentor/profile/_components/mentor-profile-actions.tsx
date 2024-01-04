@@ -65,7 +65,7 @@ export const MentorProfileActions = ({
     };
     */
     return (
-        <div className="flex items-center gap-x-2">
+        <div className="flex items-center justify-end gap-x-2">
             <Button
                 onClick={onClick}
                 disabled={disabled || isLoading}
