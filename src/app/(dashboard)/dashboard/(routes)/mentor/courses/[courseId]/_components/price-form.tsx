@@ -84,7 +84,7 @@ export const PriceForm = ({
         >
             <CardContent className="mt-2">
                 <div className="font-medium flex items-center justify-between">
-                    Course price
+                    Course Price
                     <Button onClick={toggleEdit} variant="ghost">
                         {isEditing ? (
                             <>Cancel</>

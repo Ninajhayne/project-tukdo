@@ -80,7 +80,7 @@ export const DescriptionForm = ({
         >
             <CardContent className="mt-2">
                 <div className="font-medium flex items-center justify-between">
-                    Course description
+                    Course Description
                     <Button onClick={toggleEdit} variant="ghost">
                         {isEditing ? (
                             <>Cancel</>

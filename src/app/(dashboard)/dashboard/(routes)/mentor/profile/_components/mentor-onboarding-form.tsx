@@ -50,12 +50,7 @@ const MentorOnboardingForm = () => {
 
     return (
             <div>
-                <h1 className="text-2xl">
-                    Tell us about yourself
-                </h1>
-                <p className="text-sm text-slate-600">
-                    Share your expertise, grow, make a difference
-                </p>
+                
                 <Form {...form}>
                     <form
                         onSubmit={form.handleSubmit(onSubmit)}
@@ -67,8 +62,8 @@ const MentorOnboardingForm = () => {
                             name="description"
                             render={({field}) => (
                                 <FormItem>
-                                    <FormLabel>
-                                        About me
+                                    <FormLabel className="font-medium text-base">
+                                        Tell us about yourself
                                     </FormLabel>
                                     <FormControl>
                                         <Textarea

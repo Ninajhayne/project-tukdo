@@ -61,7 +61,7 @@ export const ImageForm = ({
         >
             <CardContent className="mt-2">
                 <div className="font-medium flex items-center justify-between">
-                    Course image
+                    Course Image
                     <Button onClick={toggleEdit} variant="ghost">
                         {isEditing && (
                             <>Cancel</>

@@ -74,7 +74,7 @@ export const TitleForm = ({
         >
             <CardContent className="mt-2">
                 <div className="font-medium flex items-center justify-between">
-                    Course title
+                    Course Title
                     <Button onClick={toggleEdit} variant="ghost">
                         {isEditing ? (
                             <>Cancel</>

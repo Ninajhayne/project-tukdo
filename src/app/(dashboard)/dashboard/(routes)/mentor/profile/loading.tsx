@@ -12,7 +12,7 @@ export default function DashboardProfileLoading() {
   return (
     <Shell variant="sidebar" as="div">
       <PageHeader>
-        <PageHeaderHeading size="sm">Profile Setup</PageHeaderHeading>
+        <PageHeaderHeading size="sm"></PageHeaderHeading>
         <PageHeaderDescription size="sm">
           Customize your profile
         </PageHeaderDescription>

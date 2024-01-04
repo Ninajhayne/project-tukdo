@@ -74,7 +74,7 @@ export const AttachmentForm = ({
         >
             <CardContent>
                 <div className="font-medium flex items-center justify-between mt-2">
-                    Course attachments
+                    Course Attachments
                     <Button onClick={toggleEdit} variant="ghost">
                         {isEditing && (
                             <>Cancel</>

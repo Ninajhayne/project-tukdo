@@ -99,7 +99,7 @@ export const CategoryForm = ({
         >
             <CardContent>
                 <div className="font-medium flex items-center justify-between mt-2">
-                    Course category
+                    Course Category
                     <Button onClick={toggleEdit} variant="ghost">
                         {isEditing ? (
                             <>Cancel</>
