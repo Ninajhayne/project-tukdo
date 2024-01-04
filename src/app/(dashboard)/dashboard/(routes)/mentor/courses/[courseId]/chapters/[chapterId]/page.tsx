@@ -13,7 +13,12 @@ import { ChapterAccessForm } from "./_components/chapter-access-form";
 import { ChapterVideoForm } from "./_components/chapter-video-form";
 import { Banner } from "@/components/course/banner";
 import { ChapterActions } from "./_components/chapter-actions";
-
+import Image from "next/image";
+import {
+    PageHeader,
+    PageHeaderDescription,
+    PageHeaderHeading,
+} from "@/components/page-header"
 
 const ChapterIdPage = async ({
     params
@@ -58,40 +63,49 @@ const ChapterIdPage = async ({
                     label="This chapter is unpublished. It will not be visible in the course"
                 />
             )}
-            <div className="p-6">
-                <div className="flex items-center justify-between">
-                    <div className="w-full">
+                    <PageHeader
+                        id="chapter-setup-page-header"
+                        aria-labelledby="chapter-setuppage-header-heading"
+                        className="rounded-lg shadow-sm bg-[#F2602D] flex items-center mb-4"
+                    >
+                        <div className="p-6">
+                            <PageHeaderHeading size="sm" className="text-[#FFFFFF] mb-2">Chapter Creation</PageHeaderHeading>
+                            <PageHeaderDescription size="sm" className="text-[#FFFFFF]">
+                                Complete all fields {completionText}
+                            </PageHeaderDescription>
+                        </div>
+                        <div className="ml-auto flex-shrink- mr-6">
+                            <Image
+                                src="/images/header/owl.png"
+                                alt=""
+                                width={100}
+                                height={100}
+                                className="w-32 h-28 object-cover"
+                                loading="lazy"
+                            />
+                        </div>
+                    </PageHeader>
+                    <div className="flex items-center justify-between gap-x-2">
                         <Link 
                             href={`/dashboard/mentor/courses/${params.courseId}`}
                             className="flex items-center text-sm hover:opacity-75 transition mb-6"
                         >
-                            <ArrowLeft className="h-4 w-4 mr-2"/>
+                            <ArrowLeft className="h-4 w-4 mr-2 text-[#F2602D]"/>
                             Back to course setup
                         </Link>
-                        <div className="flex items-center justify-between w-full">
-                            <div className="flex flex-col gap-y-2">
-                                <h1 className="text-2xl font-medium">
-                                    Chapter Creation
-                                </h1>
-                                <span className="text-sm text-slate-700 dark:text-slate-200">
-                                    Complete all fields {completionText}
-                                </span>
-                            </div>
-                            <ChapterActions
+                        <ChapterActions
                                 disabled={!isComplete}
                                 courseId={params.courseId}
                                 chapterId={params.chapterId}
                                 isPublished={chapter.isPublished}
                             />
-                        </div>
                     </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-4">
                     <div className="space-y-4">
                         <div>
                             <div className="flex items-center gap-x-2">
                                 <h2 className="text-xl">
-                                    Customize your chapter
+                                    Customize your Chapter
                                 </h2>
                             </div>
                             <ChapterTitleForm
@@ -131,7 +145,6 @@ const ChapterIdPage = async ({
                         />
                     </div>
                 </div>
-            </div>
         </>
     );
 };

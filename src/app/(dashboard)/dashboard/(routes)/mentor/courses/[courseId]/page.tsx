@@ -88,7 +88,7 @@ const CourseIdPage = async ({
                     label="This course is unpublished. It will not be visible to the students."
                 />
             )}
-                <PageHeader
+                    <PageHeader
                         id="course-setup-page-header"
                         aria-labelledby="course-setuppage-header-heading"
                         className="rounded-lg shadow-sm bg-[#F2602D] flex items-center mb-4"
@@ -101,7 +101,7 @@ const CourseIdPage = async ({
                         </div>
                         <div className="ml-auto flex-shrink- mr-6">
                             <Image
-                                src="/images/header/girl.png"
+                                src="/images/header/owl.png"
                                 alt=""
                                 width={100}
                                 height={100}
@@ -119,7 +119,7 @@ const CourseIdPage = async ({
                     <div>
                         <div className="flex items-center gap-x-2">
                             <h2 className="text-xl">
-                                Customize your course
+                                Customize your Course
                             </h2>
                         </div>
                         <TitleForm
@@ -158,7 +158,7 @@ const CourseIdPage = async ({
                         <div>
                             <div className="flex items-center gap-x-2">
                                 <h2 className="text-xl">
-                                    Sell your course
+                                    Sell your Course
                                 </h2>
                             </div>
                             <PriceForm

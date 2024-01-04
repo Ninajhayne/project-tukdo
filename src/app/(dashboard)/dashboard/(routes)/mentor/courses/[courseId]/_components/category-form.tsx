@@ -153,7 +153,7 @@ export const CategoryForm = ({
                                             <PopoverContent className="w-full p-0">
                                             <Command>
                                                 <CommandInput placeholder="Search categories..." />
-                                                <CommandEmpty>No language found.</CommandEmpty>
+                                                <CommandEmpty>No categories found.</CommandEmpty>
                                                 <CommandGroup>
                                                 {options.map((option) => (
                                                     <CommandItem
