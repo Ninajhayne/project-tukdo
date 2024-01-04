@@ -20,12 +20,12 @@ const buttonVariants = cva(
           "border border-input border-[#F2602D] bg-[#ffffff] text-[#F2602D] hover:bg-accent  hover:text-accent-[#F2602D]",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+        ghost: "hover:bg-[#C44D24] hover:text-[#ffffff]",
         link: "text-primary underline-offset-4 hover:underline",
         success: "bg-emerald-600 text-white hover:bg-emerald-600/80",
         plaza_button: "bg-[#F2602D] text-white hover:bg-[#C44D24]",
         error: "bg-red-500 text-white hover:bg-red-500/80"
-      },
+      }, 
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
