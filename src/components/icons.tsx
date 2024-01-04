@@ -70,6 +70,7 @@ import {
     Users,
     Library,
     MessageCircle,
+    Trophy,
   } from "lucide-react"
 
   
@@ -154,6 +155,7 @@ import {
     usergroup: Users,
     library: Library,
     chat: MessageCircle,
+    trophy: Trophy,
 
     academicsCategory: PiBookOpenTextLight,
     businessCategory: RxBarChart,

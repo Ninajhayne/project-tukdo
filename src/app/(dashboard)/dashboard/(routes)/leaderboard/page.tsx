@@ -1,24 +1,19 @@
 import type { Metadata } from "next"
 import Image from "next/image";
 import { unstable_cache as cache } from "next/cache"
-
-import { IoTrophySharp } from "react-icons/io5";
-
+import { Shell } from "@/components/shells/shell"
+import { db } from "@/lib/db";
 
 import { DataTable } from "./_components/data-table";
-import  { columns } from "./_components/columns";
-
+import { columns } from "./_components/columns";
+import { columns2 } from "./_components/columns2";
 import { DataTable2 } from "./_components/data-table2";
-import  { columns2 } from "./_components/columns2";
-import { db } from "@/lib/db";
 
 import {
     PageHeader,
     PageHeaderDescription,
     PageHeaderHeading,
 } from "@/components/page-header"
-import { Shell } from "@/components/shells/shell"
-//import { getSubscriptionPlanAction } from "@/app/_actions/stripe"
 
 export const metadata: Metadata = {
     metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
@@ -26,7 +21,7 @@ export const metadata: Metadata = {
     description: "",
 }
 
-export default async function LeaderboardPage() {
+const LeaderboardPage = async () => {
     const someCourses = await cache(
 		async () => {
 			return db.course.findMany({
@@ -84,45 +79,53 @@ export default async function LeaderboardPage() {
 
     return (
         <Shell variant="sidebar" as="div">
-        <PageHeader id="leaderboard-header" aria-labelledby="leaderboard-header-heading" className="rounded-lg shadow-sm bg-[#F2602D] flex items-center gap-x-2">
-            <div className="p-6">
-                <PageHeaderHeading size="sm" className="text-[#FFFFFF] mb-2">Leaderboard</PageHeaderHeading>
-            </div>
-            <div className="ml-auto flex-shrink- mr-6">
-                <Image
-                    src="/images/header/owl.png"
-                    alt=""
-                    width={100}
-                    height={100}
-                    className="w-32 h-28 object-cover"
-                    loading="lazy"
-                />
-            </div>
-        </PageHeader>
-        <section
-            id="billing-info"
-            aria-labelledby="billing-info-heading"
-            className="space-y-5"
-        >
-            <h2 className="flex text-xl font-semibold sm:text-2xl gap-2">Top Courses <IoTrophySharp color={"#FFE600"} size={"2rem"}/></h2>
-            
-            <div>
-                <DataTable columns={columns} data={someCourses} />
-            </div>
-        </section>
+			<PageHeader id="leaderboard-header" aria-labelledby="leaderboard-header-heading" className="rounded-lg shadow-sm bg-[#F2602D] flex items-center gap-x-2">
+				<div className="p-6">
+					<PageHeaderHeading size="sm" className="text-[#FFFFFF] mb-2">Leaderboard</PageHeaderHeading>
+					<PageHeaderDescription size="sm" className="text-[#FFFFFF]">
+						Highlighting exceptional tutors and courses for their outstanding contributions.
+					</PageHeaderDescription>
+				</div>
+				<div className="ml-auto flex-shrink- mr-6">
+					<Image
+						src="/images/header/owl.png"
+						alt=""
+						width={100}
+						height={100}
+						className="w-32 h-28 object-cover"
+						loading="lazy"
+					/>
+				</div>
+			</PageHeader>
+			<div className="grid gap-6 xs:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
 
-        <section
-            id="billing-info"
-            aria-labelledby="billing-info-heading"
-            className="space-y-5"
-        >
-            <h2 className="flex text-xl font-semibold sm:text-2xl gap-2">Top Tutors <IoTrophySharp color={"#FFE600"} size={"2rem"}/></h2>
-            
-            <div>
-                <DataTable2 columns={columns2} data={someMentors} />
-            </div>
-        </section>
+			<section
+				id="billing-info"
+				aria-labelledby="billing-info-heading"
+				className="space-y-5"
+			>
+				<h2 className="flex text-xl font-semibold sm:text-2xl gap-2">Top 10 Courses</h2>
+				
+				<div>
+					<DataTable columns={columns} data={someCourses} />
+				</div>
+			</section>
+
+			<section
+				id="billing-info"
+				aria-labelledby="billing-info-heading"
+				className="space-y-5"
+			>
+				<h2 className="flex text-xl font-semibold sm:text-2xl gap-2">Top 10 Tutors</h2>
+				
+				<div>
+					<DataTable2 columns={columns2} data={someMentors} />
+				</div>
+			</section>
+		</div>
       
         </Shell>
     )
 }
+
+export default LeaderboardPage;

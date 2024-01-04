@@ -14,6 +14,12 @@ export const dashboardConfig: DashboardConfig = {
             items: [],
         },
         {
+            title: "Leaderboard",
+            href: "/dashboard/leaderboard",
+            icon: "trophy",
+            items: [],
+        },
+        {
             title: "Account",
             href: "/dashboard/account",
             icon: "user",
