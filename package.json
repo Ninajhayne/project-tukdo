@@ -67,6 +67,8 @@
     "eslint": "8.50.0",
     "eslint-config-next": "13.5.3",
     "geist": "^1.0.0",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.8.1",
     "leaflet": "^1.9.4",
     "livekit-client": "^1.13.4",
     "livekit-server-sdk": "^1.2.6",

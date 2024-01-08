@@ -1,11 +1,13 @@
 import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
+import { Shell } from "@/components/shells/shell"
 
 import { getAnalytics } from "@/app/_actions/course/get-analytics"; 
 
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Separator } from "@/components/ui/separator"
+import Image from "next/image";
 
 import {
 	Dialog,
@@ -16,6 +18,11 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from "@/components/ui/dialog"
+import {
+    PageHeader,
+    PageHeaderDescription,
+    PageHeaderHeading,
+} from "@/components/page-header"
 
 import { DataCard } from "./_components/data-card";
 import { Chart } from "./_components/chart";
@@ -65,9 +72,27 @@ const AnalyticsPage = async ({
 
 
     return ( 
-        <div className="p-6">
-            <div className="flex flex-col lg:flex-row items-center justify-between">
-				<h2 className="text-3xl font-bold tracking-tight">Analytics</h2>
+        <Shell variant="sidebar" as="div">
+			<div className="grid gap-4">
+			<PageHeader id="billing-header" aria-labelledby="billing-header-heading" className="rounded-lg shadow-sm bg-[#F2602D] flex items-center gap-x-2">
+				<div className="p-6">
+					<PageHeaderHeading size="sm" className="text-[#FFFFFF] mb-2">Analytics</PageHeaderHeading>
+					{/*<PageHeaderDescription size="sm" className="text-[#FFFFFF]">
+						Manage your
+					</PageHeaderDescription>*/}
+				</div>
+				<div className="ml-auto flex-shrink- mr-6">
+					<Image
+						src="/images/header/boy.png"
+						alt=""
+						width={100}
+						height={100}
+						className="w-32 h-28 object-cover"
+						loading="lazy"
+					/>
+				</div>
+			</PageHeader>
+            <div className="flex flex-col lg:flex-row items-center justify-end">
 				<div className="flex flex-col lg:flex-row items-center space-x-2">
 					<HistorySelect />
 					<Button>
@@ -75,8 +100,9 @@ const AnalyticsPage = async ({
 					</Button>
 				</div>
 			</div>
+			</div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <DataCard
                     label="Revenue"
                     value={totalRevenue}
@@ -100,7 +126,7 @@ const AnalyticsPage = async ({
 						<DialogHeader>
 						<DialogTitle>Students</DialogTitle>
 						<DialogDescription>
-							Here, you can view a list of students who have purchased your course. 
+							Here you can view a list of learners who have purchased your course. 
 						</DialogDescription>
 						</DialogHeader>
 						{buyers && (
@@ -134,7 +160,7 @@ const AnalyticsPage = async ({
             <Chart
                 data={data}
             />
-        </div>
+        </Shell>
     );
 }
  
