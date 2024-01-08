@@ -1,27 +1,21 @@
 import { db } from "@/lib/db";
-import { Course, Purchase } from "@prisma/client";
 
-type PurchaseWithCourse = Purchase & {
-    course: Course;
-};
-
-const groupByCourse = (purchases: PurchaseWithCourse[]) => {
-    const grouped: { [courseTitle: string]: number } = {};
-    
-    purchases.forEach((purchase) => {
-        const courseTitle = purchase.course.title;
-        if (!grouped[courseTitle]) {
-            grouped[courseTitle] = 0;
-        }
-        grouped[courseTitle] += purchase.course.price!;
-    });
-
-    return grouped;
-};
-
-export const getAnalytics = async (userId: string, timeframe?: string) => {
+export const getBuyers = async (userId: string, timeframe?: string) => {
     try {
-const currentDate = new Date();
+        // Define a map to convert timeframe values to days
+        /*
+        const timeframeMap = {
+            last24Hours: 1,
+            yesterday: 1,
+            thisWeek: 7,
+            last7Days: 7,
+            thisMonth: 30,
+            last30Days: 30,
+            last90Days: 90,
+        } as Record<string, number>;
+        */
+
+        const currentDate = new Date();
         let startDate = new Date();
         //startDate.setDate(startDate.getDate() - timeframeMap[timeframe]);
 
@@ -57,12 +51,13 @@ const currentDate = new Date();
                 // If the timeframe is not recognized or is 'last24Hours', use the current date
                 startDate = currentDate;
                 break;
-        }
+        }        
 
-        const purchases = await db.purchase.findMany({
+        // Fetch purchases with course information
+        const buyers = await db.purchase.findMany({
             where: {
                 course: {
-                userId: userId
+                    userId: userId
                 },
                 createdAt: {
                     gte: startDate,
@@ -70,29 +65,20 @@ const currentDate = new Date();
             },
             include: {
                 course: true,
+                user: {
+                    select: {
+                        name: true,
+                    }
+                }
+            },
+            orderBy: {
+                createdAt: "desc"
             }
         });
 
-        const groupedEarnings = groupByCourse(purchases);
-        const data = Object.entries(groupedEarnings).map(([courseTitle, total]) => ({
-            name: courseTitle,
-            total: total,
-        }));
-
-        const totalRevenue = data.reduce((acc, curr) => acc + curr.total, 0);
-        const totalSales = purchases.length;
-
-        return {
-            data,
-            totalRevenue,
-            totalSales,
-        };
+        return buyers;
     } catch (error) {
-        console.log("[GET_ANALYTICS]", error);
-        return {
-            data: [],
-            totalRevenue: 0,
-            totalSales: 0,
-        };
-    };
+        console.log("[GET_BUYERS]", error);
+        return null;
+    }
 };

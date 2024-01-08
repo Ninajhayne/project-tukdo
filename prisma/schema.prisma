@@ -28,6 +28,8 @@ model Profile {
   courseRatings CourseRating[]
   listingRatings ListingRating[]
 
+  purchases Purchase[]
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -140,13 +142,14 @@ model UserProgress {
 model Purchase {
   id String @id @default(uuid()) @map("_id")
   userId String
+  user Profile @relation(fields: [userId], references: [userId], onDelete: Cascade)
 
   courseId String
   course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
 
   createdAt DateTime @default(now())
   updateAt DateTime @updatedAt()
-
+  
 
   @@unique([userId, courseId])
   @@index([courseId])
@@ -240,7 +243,7 @@ model CV {
 model Reservation {
   id String @id @default(uuid()) @map("_id")
 
-  userId String @unique
+  userId String
   user Profile @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   listingId String
@@ -250,11 +253,14 @@ model Reservation {
   endDate   DateTime
   totalPrice Float
   approved  Boolean  @default(false)
+
+  isExpired Boolean  @default(false)
   
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@index([listingId])
+  @@unique([userId, listingId])
 }
 
 
