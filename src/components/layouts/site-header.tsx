@@ -55,11 +55,14 @@ export function SiteHeader({ user }: SiteHeaderProps) {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
-                    variant="secondary"
-                    className="relative h-8 w-8 rounded-full"
+                    variant="secondary2"
+                    className="relative h-10 rounded-md px-0"
                     aria-label="User Avatar"
                   >
-                    <Avatar className="h-8 w-8">
+                    <p className="text-sm font-medium leading-none hidden xl:inline-flex xl:mr-2">
+                        {user.firstName} 
+                      </p>
+                    <Avatar className="h-9 w-9">
                       <AvatarImage
                         src={user.imageUrl}
                         alt={user.username ?? ""}
@@ -69,7 +72,8 @@ export function SiteHeader({ user }: SiteHeaderProps) {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-56" align="end" forceMount>
-                  <DropdownMenuLabel className="font-normal">
+                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                  {/* <DropdownMenuLabel className="font-normal">
                     <div className="flex flex-col space-y-1">
                       <p className="text-sm font-medium leading-none">
                         {user.firstName} {user.lastName}
@@ -78,7 +82,7 @@ export function SiteHeader({ user }: SiteHeaderProps) {
                         {email}
                       </p>
                     </div>
-                  </DropdownMenuLabel>
+            </DropdownMenuLabel> */}
                   <DropdownMenuSeparator />
                   <DropdownMenuGroup>
                     <DropdownMenuItem asChild>
