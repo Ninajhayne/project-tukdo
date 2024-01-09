@@ -52,7 +52,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
     metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
     title: "Analytics | TUKDO",
-    description: "",
+    description: "Monitor sales, revenue, and course purchasers",
 }
 
 const AnalyticsPage = async ({
@@ -91,9 +91,9 @@ const AnalyticsPage = async ({
 			<PageHeader id="billing-header" aria-labelledby="billing-header-heading" className="rounded-lg shadow-sm bg-[#F2602D] flex items-center gap-x-2">
 				<div className="p-6">
 					<PageHeaderHeading size="sm" className="text-[#FFFFFF] mb-2">Analytics</PageHeaderHeading>
-					{/*<PageHeaderDescription size="sm" className="text-[#FFFFFF]">
-						Manage your
-					</PageHeaderDescription>*/}
+					<PageHeaderDescription size="sm" className="text-[#FFFFFF]">
+						Monitor sales, revenue, and course purchasers
+					</PageHeaderDescription>
 				</div>
 				<div className="ml-auto flex-shrink- mr-6">
 					<Image
