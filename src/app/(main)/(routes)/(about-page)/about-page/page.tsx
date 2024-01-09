@@ -1,6 +1,7 @@
 "use client";
-
+  
 import { Shell } from "@/components/shells/shell"
+import { useRouter } from "next/navigation";
 
 import { buttonVariants } from "@/components/ui/button"
 import { TbTargetArrow } from "react-icons/tb";
@@ -9,8 +10,9 @@ import { TbEyeSearch } from "react-icons/tb";
 import { TeamMemberCard } from "@/components/cards/team-member-card"
 import { teamMembers } from "@/config/members"
 
-
+  
 const AboutPage = () => {
+	const router = useRouter();
 
 	return (
 		<Shell as="div" className="gap-6 xs:gap-6 lg:gap-9 pt-0 xs:pt-0 md:pt-0 lg:pt-0">
