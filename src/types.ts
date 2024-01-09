@@ -124,6 +124,12 @@ export interface ValueProposition {
     description: string
     image: string
 }
+
+export interface ValueProposition2 {
+    title: string
+    description: string
+    image: string
+}
 /*
 export type CartItem = z.infer<typeof cartItemSchema>;
 
