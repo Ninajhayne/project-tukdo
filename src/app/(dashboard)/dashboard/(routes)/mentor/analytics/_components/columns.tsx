@@ -12,15 +12,12 @@ import { ArrowUpDown, MoreHorizontal, Pencil } from "lucide-react";
 type buyer = {
   user: {
     name: string;
-    // other user properties
   };
   course: {
     title: string;
     price: number | null;
-    // other course properties
   };
   createdAt: Date;
-  // other properties
 };
 
 export const columns: ColumnDef<buyer>[] = [
