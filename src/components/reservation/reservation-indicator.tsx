@@ -17,8 +17,10 @@ const ReservationIndicator = async ({
 
 	const reservation = await db.reservation.findUnique({
 		where: {
+		userId_listingId: {
 			userId: memberId,
-			listingId: plaza.listingId
+			listingId: plaza.listingId,
+			},
 		}
 	});
 
