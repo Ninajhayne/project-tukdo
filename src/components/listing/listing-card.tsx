@@ -73,7 +73,7 @@ export const ListingCard = ({
                     </p>
                     */}
 
-                    <p className="ml-0.5 text-lg font-bold text-[#F2602D]">
+                    <p className="ml-0.5 font-medium text-[#F2602D]">
                         {fee === 0 ? "Free" : `${formatPrice(fee)} / hour`}
                     </p>
                     {numOfRatings && rating !== 0 ? (
