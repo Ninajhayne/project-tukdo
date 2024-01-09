@@ -435,6 +435,9 @@ export function ReservationDateRange({
                         
                     </form>
                 </Form>
+                
+                
+                {/* to be removed according to ma'am satuito
                 <Separator className="my-1"/>
                 <div>
                     <div className="flex flex-col justify-center items-center">
@@ -486,6 +489,7 @@ export function ReservationDateRange({
                         )}
                     </div>
                 )}
+                */}
                 
             </CardContent>
         </Card>
