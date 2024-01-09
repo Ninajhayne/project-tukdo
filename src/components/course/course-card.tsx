@@ -171,7 +171,7 @@ export const CourseCard = ({
                                 {!rating ? "" : `★ ${rating.toFixed(1)}`}
                             </p>
                             */}
-                            <p className="text-lg font-bold text-[#F2602D]"> 
+                            <p className="text-base font-medium text-[#F2602D]"> 
                                 {!price ? "Free" : `${formatPrice(price)}`}
                             </p>
                         </div>
