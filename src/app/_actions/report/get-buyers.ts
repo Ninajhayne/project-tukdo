@@ -64,12 +64,16 @@ export const getBuyers = async (userId: string, timeframe?: string) => {
                 },
             },
             include: {
-                course: true,
+                course: {
+                    include: {
+                        category: true,
+}
+                },
                 user: {
                     select: {
                         name: true,
                     }
-                }
+                },
             },
             orderBy: {
                 createdAt: "desc"

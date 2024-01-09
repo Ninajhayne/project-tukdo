@@ -79,20 +79,20 @@ const currentDate = new Date();
             total: total,
         }));
 
-        const totalRevenue = data.reduce((acc, curr) => acc + curr.total, 0);
-        const totalSales = purchases.length;
+        const revenue = data.reduce((acc, curr) => acc + curr.total, 0);
+        const sales = purchases.length;
 
         return {
             data,
-            totalRevenue,
-            totalSales,
+            revenue,
+            sales,
         };
     } catch (error) {
         console.log("[GET_ANALYTICS]", error);
         return {
             data: [],
-            totalRevenue: 0,
-            totalSales: 0,
+            revenue: 0,
+            sales: 0,
         };
     };
 };
