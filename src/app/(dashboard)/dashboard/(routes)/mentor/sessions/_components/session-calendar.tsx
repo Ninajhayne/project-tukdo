@@ -77,7 +77,7 @@ export const SessionsCalendar = ({
     
 
     return (
-        <div className="pt-4 container">
+        <div>
             <Calendar
                 localizer={localizer}
                 events={myEventsList}
