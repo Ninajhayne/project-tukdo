@@ -74,7 +74,7 @@ export const ListingCard = ({
                     */}
 
                     <p className="ml-0.5 text-lg font-bold text-[#F2602D]">
-                        {fee === 0 ? "Free" : `${formatPrice(fee)} / day`}
+                        {fee === 0 ? "Free" : `${formatPrice(fee)} / hour`}
                     </p>
                     {numOfRatings && rating !== 0 ? (
                         <div className="flex flex-row items-center">

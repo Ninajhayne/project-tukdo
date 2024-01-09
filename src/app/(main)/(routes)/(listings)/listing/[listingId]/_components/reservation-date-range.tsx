@@ -288,7 +288,7 @@ export function ReservationDateRange({
                                         currency: "PHP"
                                     })}
                                 </p>
-                                <p>/ day</p>
+                                <p>/ hour</p>
                             </>
                         )} 
                         
