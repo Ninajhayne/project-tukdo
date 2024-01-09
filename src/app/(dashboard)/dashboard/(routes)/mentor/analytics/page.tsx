@@ -37,6 +37,8 @@ import { getTotalReports } from "@/app/_actions/report/get-total-report";
 import { CoursesPieChart } from "./_components/courses-pie-chart";
 import { DownloadPdfButton } from "./_components/download-pdf-button";
 import { currentProfile } from "@/lib/current-profile";
+import { DataTable } from "./_components/data-table";
+import  { columns } from "./_components/columns";
 
 interface AnalyticsPageProps {
     searchParams: {
@@ -83,9 +85,6 @@ const AnalyticsPage = async ({
 		totalSales,
 	} = await getTotalReports(userId);
 
-	//console.log("Data:", data);
-	//console.log("Buyers:", buyers);
-
     return ( 
         <Shell variant="sidebar" as="div" id="reportPDF">
 			<div className="grid gap-4">
@@ -107,53 +106,38 @@ const AnalyticsPage = async ({
 					/>
 				</div>
 			</PageHeader>
-            <div className="flex items-center">
-				<div className="flex items-center space-x-2">
-					<HistorySelect />
-					<DownloadPdfButton
-						timeFrame={searchParams.history || ""}
-						sales={sales}
-						revenue={revenue}
-						//@ts-ignore
-						buyers={buyers}
-						tutor={profile}
-					/>				
-				</div>
-			</div>
+        
 			</div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
 				<DataCard
 					label="Total Revenue"
 					value={totalRevenue}
 					shouldFormat
-					bg="#00538a55"
+					bg="#00538a85"
 				/>
 				<DataCard
 					label="Total Students"
 					value={totalSales}
-					bg="#F2602D55"
+					bg="#00538aab"
 				/>
 				<DataCard
 					label="Revenue"
 					value={revenue}
 					shouldFormat
-					bg="#FFE60055"
+					bg="#f2602da8"
 				/>
 				<DataCard
 					label="Sales"
 					value={sales}
-					bg="#00538a25"
+					bg="#f2602dc4"
 
 				/>
                
             </div>
 
 			<div className="grid grid-cols-1 md:grid-cols-2 mb-2 space-y-2">
-{/*
-				<CoursesRadarChart/>
-*/}
-				<CoursesPieChart className=" h-[40vh]" data={categoryTitles}/>
+				<CoursesPieChart data={categoryTitles}/>
 
 				<div className="space-y-2 xs:mt-2">
 					{/*
@@ -168,7 +152,29 @@ const AnalyticsPage = async ({
 						value={sales}
 						bg="#F2602D12"
 
-/>*/}
+					/>*/}
+					<div className="flex items-center">
+						<div className="flex items-center space-x-2">
+							<HistorySelect />
+							<DownloadPdfButton
+								timeFrame={searchParams.history || ""}
+								sales={sales}
+								revenue={revenue}
+								//@ts-ignore
+								buyers={buyers}
+								tutor={profile}
+							/>				
+						</div>
+					</div>
+
+					{buyers !== null ? (
+					<DataTable columns={columns} data={buyers} />
+					) : (
+					<p>No data available</p>
+					)}
+
+
+					{/* 
 					<Dialog>
 						<DialogTrigger asChild>
 							<Button variant="outline" className="mb-4">View Students</Button>
@@ -206,6 +212,7 @@ const AnalyticsPage = async ({
 							
 						</DialogContent>
 					</Dialog>
+					*/}
 				</div>
 				
 			</div>

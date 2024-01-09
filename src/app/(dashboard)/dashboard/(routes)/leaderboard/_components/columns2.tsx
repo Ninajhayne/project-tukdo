@@ -12,11 +12,11 @@ import { Button } from "@/components/ui/button";
 
 interface TutorListing {
   featuredTutor: Listing & {
-  mentor: {
-    imageUrl: string,
-    name: string,
-  }
-};
+    mentor: {
+      imageUrl: string,
+      name: string,
+    }
+  };
   href: string;
 }
 
