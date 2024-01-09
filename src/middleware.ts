@@ -17,6 +17,7 @@ export default authMiddleware({
     "/listings(.*)",
     "/listing(.*)",
     "/become-a-mentor",
+    "/about-page",
     "/api(.*)",
     "/api/uploadthing",
     "/api/webhook",
