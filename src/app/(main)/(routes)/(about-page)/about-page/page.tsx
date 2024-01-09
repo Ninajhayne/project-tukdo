@@ -1,7 +1,6 @@
 "use client";
   
 import { Shell } from "@/components/shells/shell"
-import { useRouter } from "next/navigation";
 
 import { buttonVariants } from "@/components/ui/button"
 import { TbTargetArrow } from "react-icons/tb";
@@ -10,9 +9,11 @@ import { TbEyeSearch } from "react-icons/tb";
 import { TeamMemberCard } from "@/components/cards/team-member-card"
 import { teamMembers } from "@/config/members"
 
+import { vProposition } from "@/config/valuep"
+import { ValuePropositionLayout } from "@/components/layouts/value-proposition-container"
+
   
 const AboutPage = () => {
-	const router = useRouter();
 
 	return (
 		<Shell as="div" className="gap-6 xs:gap-6 lg:gap-9 pt-0 xs:pt-0 md:pt-0 lg:pt-0">
@@ -79,6 +80,16 @@ const AboutPage = () => {
 					</div>
 				</div>
 			</section>
+			<section
+				id="value-proposition"
+				aria-labelledby="value-proposition-heading"
+				className="py-9 space-y-3 mx-0 xs:mx-0 sm:mx-8 lg:mx-14 md:mx-16"
+			>          
+				{vProposition.map((valueproposition, index) => (
+					<ValuePropositionLayout key={index} valueproposition={valueproposition} index={index} />
+				))}
+
+			</section>
 
 			<section
 				id="team-members"
@@ -104,30 +115,3 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
-
-/*
-	<AnimatedNumbers
-		includeComma
-		animateToNumber={(earnings * 10) * coursePriceMultiplier}
-		fontStyle={{
-			fontSize: '3rem',
-			fontWeight: '700',
-			WebkitBackgroundClip: 'text',
-			backgroundClip: 'text',
-			color: 'transparent',
-			backgroundImage: 'linear-gradient(to right, rgba(251, 146, 60), rgba(245, 101, 101))',
-		}}								
-		
-		locale="en-US"
-		className="font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-rose-400"
-		configs={[
-			{ mass: 1, tension: 200, friction: 20 },
-			{ mass: 1, tension: 120, friction: 14 },
-			{ mass: 1, tension: 180, friction: 12 },
-			{ mass: 1, tension: 100, friction: 18 },
-			{ mass: 1, tension: 150, friction: 15 },
-			{ mass: 1, tension: 240, friction: 10 },
-		]}
-		
-	/>
-*/
