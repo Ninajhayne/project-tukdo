@@ -85,7 +85,7 @@ export async function PATCH(
         //const { userId } = auth();
         const profile = await currentProfile();
         const { listingId } = params;
-        const { reservationDate, totalPrice } = await req.json();
+        const { reservationDate, totalPrice, expirationStatus } = await req.json();
 
         /*
         if (!userId) {
@@ -99,12 +99,16 @@ export async function PATCH(
 
         const updatedReservation = await db.reservation.update({
             where: {
+                userId_listingId: {
                 userId: profile.id,
                 listingId,
             },
+},
             data: {
                 startDate: reservationDate.from,
                 endDate: reservationDate.to,
+                approved: false,
+                isExpired: expirationStatus,
                 totalPrice,
             },
         });
@@ -112,6 +116,41 @@ export async function PATCH(
         return NextResponse.json(updatedReservation);
     } catch (error) {
         console.log("[PATCH_RESERVATION_LISTING_ID]", error);
+        return new NextResponse("Internal Server Error", { status: 500 });
+    };
+};
+
+export async function DELETE(
+    req: Request,
+    { params }: { params: { listingId: string } }
+) {
+    try {
+        //const { userId } = auth();
+        const profile = await currentProfile();
+        const { listingId } = params;
+
+        /*
+        if (!userId) {
+            return new NextResponse("Unauthorized", {status: 401});
+        }
+        */
+
+        if (!profile) {
+            return new NextResponse("Unauthorized", {status: 401});
+        }
+
+        const deletedReservation = await db.reservation.delete({
+            where: {
+                userId_listingId: {
+                    userId: profile.id,
+                    listingId,
+                },
+            },
+        });
+
+        return NextResponse.json(deletedReservation);
+    } catch (error) {
+        console.log("[DELETE_RESERVATION_LISTING_ID]", error);
         return new NextResponse("Internal Server Error", { status: 500 });
     };
 };

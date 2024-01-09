@@ -205,8 +205,11 @@ export function ReservationDateRange({
             
             if (myReservation) {
                 // User has an existing reservation, so update it
-                await axios.patch(`/api/listing/${listing.id}`, payload);
-                toast.success("Reservation updated");
+                //await axios.patch(`/api/listing/${listing.id}`, payload);
+                //toast.success("Reservation updated");
+
+                await axios.delete(`/api/listing/${listing.id}`);
+                toast.success("Reservation cancelled");
             } else {
                 // User doesn't have an existing reservation, create a new one
                 await axios.post(`/api/listing/${listing.id}`, payload);
@@ -398,8 +401,7 @@ export function ReservationDateRange({
                                                 numberOfMonths={2}
                                                 //disabled={(date) => date < new Date()}
                                                 fixedWeeks
-                                                
-                                                disabled={(date) => {
+                                                                                                disabled={(date) => {
                                                     // Check if date is earlier than the current date
                                                     if (date < new Date()) {
                                                         return true; // Disable dates in the past
@@ -425,7 +427,7 @@ export function ReservationDateRange({
                                         disabled={disableButton || loading}
                                     >
                                         {loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-                                        {myReservation ? "Update" : "Reserve"}
+                                        {myReservation ? "Cancel" : "Reserve"}
                                     </Button>
                                 </FormItem>
                             )}
